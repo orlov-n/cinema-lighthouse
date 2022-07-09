@@ -16,20 +16,28 @@ class App extends Component {
 
   displayInfoPage = (id) => {
     const matchId = this.state.movies.find(movie => movie.id === id)
-      console.log('this is matchId', matchId)
     this.setState({
       isHomepage: false,
       selectedMovie: matchId
     })
+  }
 
+  displayHomePage = () => {
+    this.setState({
+      isHomepage: true
+    })
   }
 
   render() {
     return (
+      <>
+      <nav>
+        <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
+      </nav>
       <main>
-        <h1>Rancid Tomatillos</h1>
        {!this.state.isHomepage ? <InfoPage selectedMovie={this.state.selectedMovie}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage}/>} 
       </main>
+      </>
     );
   };
 };

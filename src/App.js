@@ -9,22 +9,26 @@ class App extends Component {
     super();
     this.state = {
       movies: movieData.movies,
-      isHomepage: true
+      isHomepage: true,
+      selectedMovie: {}
     };
   };
 
   displayInfoPage = (id) => {
+    const matchId = this.state.movies.find(movie => movie.id === id)
+      console.log('this is matchId', matchId)
     this.setState({
-      isHomepage: false
+      isHomepage: false,
+      selectedMovie: matchId
     })
-  
+
   }
 
   render() {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-       {!this.state.isHomepage ? <InfoPage movieData={this.state.movies}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage}/>} 
+       {!this.state.isHomepage ? <InfoPage selectedMovie={this.state.selectedMovie}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage}/>} 
       </main>
     );
   };

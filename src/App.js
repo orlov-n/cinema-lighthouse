@@ -13,18 +13,18 @@ class App extends Component {
     };
   };
 
-  displayInfoPage = (event) => {
+  displayInfoPage = (id) => {
     this.setState({
       isHomepage: false
     })
+  
   }
 
   render() {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        <MoviesContainer movieData={ this.state.movies }/>
-        <InfoPage movieData={ this.state.movies }/>
+       {!this.state.isHomepage ? <InfoPage movieData={this.state.movies}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage}/>} 
       </main>
     );
   };

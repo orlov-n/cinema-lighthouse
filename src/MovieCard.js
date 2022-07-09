@@ -4,7 +4,7 @@ import './MovieCard.css';
 const MovieCard = ({ movie }) => {
     return (
         <div className='card'>
-            <img src={movie.backdrop_path}></img>
+            <img src={movie.backdrop_path} alt='movie backdrop'></img>
             <p>{movie.title}</p>
         </div>
     );

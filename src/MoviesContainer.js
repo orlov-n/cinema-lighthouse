@@ -1,9 +1,21 @@
 import React from 'react';
 import './MoviesContainer.css';
+import MovieCard from './MovieCard';
 
-const MoviesContainer = () => {
+const MoviesContainer = ({ movieData }) => {
+    const movieCards = movieData.map(movie => {
+        return (
+            <MovieCard 
+                key={movie.id}
+                movie={movie}
+            />
+        );
+    });
+
     return (
-        <h2>cards</h2>
+        <div className= 'movies-container'>
+            {movieCards}
+        </div> 
     );
 };
 

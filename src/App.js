@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MoviesContainer from './MoviesContainer';
+// import MovieCard from './MovieCard'
 import movieData from './testData.js';
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        <MoviesContainer />
+        <MoviesContainer movieData={ this.state.movies }/>
       </main>
     );
   };

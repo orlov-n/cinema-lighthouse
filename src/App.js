@@ -3,6 +3,7 @@ import './App.css';
 import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
+import Error from './Error';
 
 class App extends Component {
   constructor() {
@@ -10,7 +11,9 @@ class App extends Component {
     this.state = {
       movies: [],
       isHomepage: true,
-      selectedMovieId: null
+      selectedMovieId: null,
+      isError: false,
+      errorMessage: ''
     };
   };
 
@@ -19,6 +22,12 @@ class App extends Component {
     .then(data => {
       this.setState({
         movies: data.movies
+      })
+    })
+    .catch(error => {
+      this.setState({
+        isError: true,
+        errorMessage: error
       })
     })
   };
@@ -43,6 +52,7 @@ class App extends Component {
           <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
         </nav>
         <main>
+          {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
           {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
         </main>
       </>

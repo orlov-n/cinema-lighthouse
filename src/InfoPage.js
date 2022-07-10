@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './InfoPage.css';
 import { getSelectedMovie } from './apiCalls';
 
 class InfoPage extends Component {

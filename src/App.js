@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import MoviesContainer from './MoviesContainer';
-import movieData from './testData.js';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
 
@@ -11,7 +10,7 @@ class App extends Component {
     this.state = {
       movies: [],
       isHomepage: true,
-      selectedMovie: {}
+      selectedMovieId: null
     };
   };
 
@@ -25,10 +24,9 @@ class App extends Component {
   };
 
   displayInfoPage = (id) => {
-    const matchId = this.state.movies.find(movie => movie.id === id)
     this.setState({
       isHomepage: false,
-      selectedMovie: matchId
+      selectedMovieId: id
     });
   };
 
@@ -45,12 +43,11 @@ class App extends Component {
           <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
         </nav>
         <main>
-          {!this.state.isHomepage ? <InfoPage selectedMovie={this.state.selectedMovie}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
+          {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
         </main>
       </>
     );
   };
 };
-
 
 export default App;

@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { getSelectedMovie } from './apiCalls';
 
-const InfoPage = ({ selectedMovie }) => {
+class InfoPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedMovie: {}
+    };
+  };
 
-  return (
-    <>
-      <h2>{selectedMovie.title}</h2>
-      <img src={selectedMovie.backdrop_path} alt='movie backdrop'></img>
-    </>
-  );
+  componentDidMount = () => {
+    getSelectedMovie(this.props.selectedMovieId)
+    .then(data => {
+      this.setState({
+        selectedMovie: data.movie
+      })
+    })
+  };
+
+  render() {
+    return (
+      <>
+        <h2>{this.state.selectedMovie.title}</h2>
+        <h3>{this.state.selectedMovie.tagline}</h3>
+        <img src={this.state.selectedMovie.backdrop_path} alt='movie backdrop'></img>
+      </>
+    );
+  };
 };
 
 export default InfoPage;

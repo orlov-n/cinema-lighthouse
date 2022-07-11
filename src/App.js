@@ -1,46 +1,67 @@
 import React, { Component } from 'react';
 import './App.css';
 import MoviesContainer from './MoviesContainer';
-import movieData from './testData.js';
 import InfoPage from './InfoPage';
+import { getMovies } from './apiCalls';
+import Error from './Error';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       isHomepage: true,
-      selectedMovie: {}
+      selectedMovieId: null,
+      isError: false,
+      errorMessage: '',
+      isLoading: true
     };
   };
 
+  componentDidMount = () => {
+    getMovies()
+    .then(data => {
+      this.setState({
+        movies: data.movies,
+        isLoading:false
+      })
+    })
+    .catch(error => {
+      console.log(error);
+      this.setState({
+        isError: true,
+        errorMessage: error
+      })
+    })
+  };
+
   displayInfoPage = (id) => {
-    const matchId = this.state.movies.find(movie => movie.id === id)
     this.setState({
       isHomepage: false,
-      selectedMovie: matchId
-    })
-  }
+      selectedMovieId: id
+    });
+  };
 
   displayHomePage = () => {
     this.setState({
       isHomepage: true
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <>
-      <nav>
-        <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
-      </nav>
-      <main>
-       {!this.state.isHomepage ? <InfoPage selectedMovie={this.state.selectedMovie}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage}/>} 
-      </main>
+        <nav>
+          <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
+        </nav>
+        <main>
+          {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
+          {this.state.isLoading && <h2>Page Loading...</h2>}
+          {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
+        </main>
       </>
     );
   };
 };
-
 
 export default App;

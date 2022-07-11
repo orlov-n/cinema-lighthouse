@@ -13,7 +13,8 @@ class App extends Component {
       isHomepage: true,
       selectedMovieId: null,
       isError: false,
-      errorMessage: ''
+      errorMessage: '',
+      isLoading: true
     };
   };
 
@@ -21,10 +22,12 @@ class App extends Component {
     getMovies()
     .then(data => {
       this.setState({
-        movies: data.movies
+        movies: data.movies,
+        isLoading:false
       })
     })
     .catch(error => {
+      console.log(error);
       this.setState({
         isError: true,
         errorMessage: error
@@ -53,6 +56,7 @@ class App extends Component {
         </nav>
         <main>
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
+          {this.state.isLoading && <h2>Page Loading...</h2>}
           {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
         </main>
       </>

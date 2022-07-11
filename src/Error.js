@@ -3,7 +3,7 @@ import './Error.css';
 
 const Error = ({ errorMessage }) => {
     return (
-        <h2>errorMessage</h2>
+        <h2>{errorMessage}</h2>
     );
 };
 

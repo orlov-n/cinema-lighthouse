@@ -1,3 +1,24 @@
-/* * {
+* {
   border: solid blue 1px;
-} */
+}
+
+main {
+  /* background: rgb(227, 187, 180); */
+  background-color: rgb(171, 142, 89);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+
+h1 {
+  cursor: pointer;
+  width: 20vw;
+}

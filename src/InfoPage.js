@@ -33,11 +33,24 @@ class InfoPage extends Component {
     return (
       <>
         {this.state.isError ? <Error errorMessage={this.state.errorMessage} /> :
-        <>
-          <h2>{this.state.selectedMovie.title}</h2>
-          <h3>{this.state.selectedMovie.tagline}</h3>
-          <img src={this.state.selectedMovie.backdrop_path} alt='movie backdrop'></img>
-        </>
+        // 
+        //   <h2>{this.state.selectedMovie.title}</h2>
+        //   <h3>{this.state.selectedMovie.tagline}</h3>
+        //   <img src={this.state.selectedMovie.backdrop_path} alt='movie backdrop'></img>
+        //
+        <article className='movie-info-container'>
+          <div className="rotating-box">
+            <div className="rotating-box-inner">
+              <div className="rotating-box-front">
+                <img className='rotating-image'  src={this.state.selectedMovie.poster_path} alt='movie backdrop'></img> 
+              </div>
+              <div className="rotating-box-back">
+                <h2>Together</h2>
+                <p>We can do it!</p>
+              </div>
+            </div>
+        </div>
+       </article>
         }
       </>
     );

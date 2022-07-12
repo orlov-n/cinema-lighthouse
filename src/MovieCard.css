@@ -6,8 +6,10 @@ img {
     cursor: pointer;
     color: white;
     margin-top: 5vh;
-    margin-bottom: 0;
+    margin-bottom: 5vh;
     margin-left: 2vh;
+    height: 20vh;
+    width: 17vw;
     /* margin-right: 2vh; */
 }
 

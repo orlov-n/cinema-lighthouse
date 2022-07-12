@@ -1,15 +1,15 @@
 .rotating-box {
   background-color: transparent;
-  width: 27.5vw;
+  width: 30vw;
   height: 88vh;
-  /* border: 1px solid #f1f1f1; */
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; 
 }
 
 /* This container is needed to position the front and back side */
 .rotating-box-inner {
   position: relative;
-  width: 100%;
+  width: 30vw;
+  
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
@@ -25,7 +25,8 @@
 .rotating-box-front,
 .rotating-box-back {
   position: absolute;
-  width: 100%;
+  width: 30vw;
+
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
@@ -35,6 +36,8 @@
 .rotating-box-front {
   background-color: #13315c;
   color: black;
+  width: 30vw;
+
 }
 
 /* Style the back side */
@@ -42,16 +45,25 @@
   background-color: #13315c;
   color: white;
   transform: rotateY(180deg);
+  width: 30vw;
 }
 
 .rotating-image {
   height: 100%;
+  width: 30vw;
+
 }
 
 .movie-info-container {
   display: flex;
   justify-content: center;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* overflow: hidden; */
+  background-position: center;
+}
+
+.backdrop-movie-info {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }

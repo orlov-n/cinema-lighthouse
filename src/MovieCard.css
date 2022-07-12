@@ -4,4 +4,14 @@ img {
 
 .card {
     cursor: pointer;
+    color: white;
+    margin-top: 5vh;
+    margin-bottom: 0;
+    margin-left: 2vh;
+    /* margin-right: 2vh; */
+}
+
+.card > p {
+   
+    margin-bottom: 0;
 }

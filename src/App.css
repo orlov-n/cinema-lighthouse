@@ -4,7 +4,7 @@
 
 main {
   /* background: rgb(227, 187, 180); */
-  background-color: rgb(171, 142, 89);
+  background-color: #55508c;
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,10 +15,16 @@ main {
 nav {
   display: flex;
   justify-content: center;
+  background-color: #211E42;
+  height: 11vh;
+  /* margin-bottom: 1vh; */
 }
 
 
 h1 {
   cursor: pointer;
   width: 20vw;
+  color: rgb(209, 200, 154);
+  
 }
+

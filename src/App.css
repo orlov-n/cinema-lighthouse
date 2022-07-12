@@ -1,3 +1,30 @@
 /* * {
   border: solid blue 1px;
 } */
+body {
+  overflow: hidden;
+}
+
+main {
+  background-color: #55508c;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #211E42;
+  height: 11vh;
+}
+
+
+h1 {
+  cursor: pointer;
+  width: 20vw;
+  color: rgb(209, 200, 154);
+}
+

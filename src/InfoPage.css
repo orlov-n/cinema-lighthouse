@@ -1,0 +1,58 @@
+.rotating-box {
+  background-color: transparent;
+  width: 30vw;
+  height: 88vh;
+  perspective: 1000px; 
+}
+
+.rotating-box-inner {
+  position: relative;
+  width: 30vw;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.rotating-box:hover .rotating-box-inner {
+  transform: rotateY(180deg);
+}
+
+.rotating-box-front,
+.rotating-box-back {
+  position: absolute;
+  width: 30vw;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rotating-box-front {
+  background-color: #13315c;
+  color: black;
+  width: 30vw;
+
+}
+
+.rotating-box-back {
+  background-color: #13315c;
+  color: white;
+  transform: rotateY(180deg);
+  width: 30vw;
+}
+
+.rotating-image {
+  height: 100%;
+  width: 30vw;
+}
+
+.movie-info-container {
+  display: flex;
+  justify-content: center;
+  background-position: center;
+}
+
+.backdrop-movie-info {
+  width: 100%;
+  height: 100%;
+}

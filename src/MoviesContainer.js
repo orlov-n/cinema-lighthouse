@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const MoviesContainer = ({ movieData, displayInfoPage }) => {
     const movieCards = movieData.map(movie => {
         return (
-            <Link to={`/${movie.id}`}>
+            <Link to={`/${movie.id}`} style={{ textDecoration: 'none' }}>
                 <MovieCard 
                     key={movie.id}
                     movie={movie}

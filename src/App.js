@@ -4,7 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
 import Error from './Error';
-import { Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -48,7 +48,9 @@ class App extends Component {
     return (
       <>
         <nav>
-          <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
+          <Link to={'/'} style={{ textDecoration: 'none' }}>
+            <h1>Rancid Tomatillos</h1>
+          </Link>
         </nav>
         <main>
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}

@@ -1,15 +1,18 @@
 import React from 'react';
 import './MoviesContainer.css';
 import MovieCard from './MovieCard';
+import { Link } from 'react-router-dom';
 
 const MoviesContainer = ({ movieData, displayInfoPage }) => {
     const movieCards = movieData.map(movie => {
         return (
-            <MovieCard 
-                key={movie.id}
-                movie={movie}
-                displayInfoPage={displayInfoPage}
-            />
+            <Link to={`/${movie.id}`}>
+                <MovieCard 
+                    key={movie.id}
+                    movie={movie}
+                    displayInfoPage={displayInfoPage}
+                />
+            </Link>
         );
     });
 

@@ -4,7 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
 import Error from './Error';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -24,7 +24,7 @@ class App extends Component {
     .then(data => {
       this.setState({
         movies: data.movies,
-        isLoading:false
+        isLoading: false
       })
     })
     .catch(error => {
@@ -37,16 +37,11 @@ class App extends Component {
   };
 
   displayInfoPage = (id) => {
-    this.setState({
-      isHomepage: false,
-      selectedMovieId: id
-    });
+    this.setState({selectedMovieId: id});
   };
 
   displayHomePage = () => {
-    this.setState({
-      isHomepage: true
-    });
+    this.setState({isHomepage: true});
   };
 
   render() {
@@ -61,7 +56,11 @@ class App extends Component {
           <Route
             exact path="/" render={() => <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}
           />
-          {/* {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}  */}
+          <Route
+            exact path='/:id' render={({ match }) => {
+              return <InfoPage selectedMovieId={match.params.id} />
+            }}
+          />
         </main>
       </>
     );

@@ -4,6 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
 import Error from './Error';
+import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -57,7 +58,10 @@ class App extends Component {
         <main>
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
           {this.state.isLoading && <h2>Page Loading...</h2>}
-          {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
+          <Route
+            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}
+          />
+          {/* {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}  */}
         </main>
       </>
     );

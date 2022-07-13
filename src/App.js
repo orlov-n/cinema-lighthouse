@@ -4,6 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies } from './apiCalls';
 import Error from './Error';
+import { Link, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -23,7 +24,7 @@ class App extends Component {
     .then(data => {
       this.setState({
         movies: data.movies,
-        isLoading:false
+        isLoading: false
       })
     })
     .catch(error => {
@@ -36,28 +37,32 @@ class App extends Component {
   };
 
   displayInfoPage = (id) => {
-    this.setState({
-      isHomepage: false,
-      selectedMovieId: id
-    });
+    this.setState({selectedMovieId: id});
   };
 
   displayHomePage = () => {
-    this.setState({
-      isHomepage: true
-    });
+    this.setState({isHomepage: true});
   };
 
   render() {
     return (
       <>
         <nav>
-          <h1 onClick={() => this.displayHomePage()}>Rancid Tomatillos</h1>
+          <Link to={'/'} style={{ textDecoration: 'none' }}>
+            <h1>Rancid Tomatillos</h1>
+          </Link>
         </nav>
         <main>
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
           {this.state.isLoading && <h2>Page Loading...</h2>}
-          {!this.state.isHomepage ? <InfoPage selectedMovieId={this.state.selectedMovieId}  /> :  <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />} 
+          <Route
+            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}
+          />
+          <Route
+            exact path='/:id' render={({ match }) => {
+              return <InfoPage selectedMovieId={match.params.id} />
+            }}
+          />
         </main>
       </>
     );

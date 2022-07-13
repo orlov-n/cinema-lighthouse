@@ -1,18 +1,13 @@
 /* * {
   border: solid blue 1px;
 } */
-body {
-  overflow: hidden;
-}
 
 main {
   background-color: #55508c;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
 }
-
 
 nav {
   display: flex;
@@ -20,7 +15,6 @@ nav {
   background-color: #211E42;
   height: 11vh;
 }
-
 
 h1 {
   cursor: pointer;

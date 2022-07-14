@@ -8,4 +8,9 @@ const getSelectedMovie = (id) => {
         .then(response => response.json())
 };
 
-export { getMovies, getSelectedMovie } 
+const getSelectedTrailer = (id) => {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+        .then(response => response.json())
+};
+
+export { getMovies, getSelectedMovie, getSelectedTrailer  } 

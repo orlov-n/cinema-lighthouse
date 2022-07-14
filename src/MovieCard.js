@@ -3,7 +3,7 @@ import './MovieCard.css';
 
 const MovieCard = ({ movie, displayInfoPage }) => {
     return (
-        <div className='card' onClick={() => displayInfoPage(movie.id)}>
+        <div className='card' onMouseOver={() => displayInfoPage(movie.id)}>
             <img src={movie.backdrop_path} alt='movie backdrop'></img>
             <p>{movie.title} {`(${movie.release_date.slice(0, 4)})`}</p>
         </div>

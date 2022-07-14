@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
-import { getMovies } from './apiCalls';
+import { getMovies, getSelectedTrailer } from './apiCalls';
 import Error from './Error';
 import { Link, Route } from 'react-router-dom';
+
 
 class App extends Component {
   constructor() {
@@ -15,7 +16,8 @@ class App extends Component {
       selectedMovieId: null,
       isError: false,
       errorMessage: '',
-      isLoading: true
+      isLoading: true,
+      trailer: []
     };
   };
 
@@ -36,6 +38,17 @@ class App extends Component {
     })
   };
 
+  componentDidUpdate = (prvProps, prvState) => {
+    if (prvState.selectedMovieId !== this.state.selectedMovieId) {
+      getSelectedTrailer(this.state.selectedMovieId)
+      .then(data => {
+        this.setState({
+          trailer: data.videos
+        })
+      })
+    }
+  }
+
   displayInfoPage = (id) => {
     this.setState({selectedMovieId: id});
   };
@@ -45,6 +58,8 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state)
+
     return (
       <>
         <nav>

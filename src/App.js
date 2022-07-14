@@ -43,13 +43,13 @@ class App extends Component {
       getSelectedTrailer(this.state.selectedMovieId)
       .then(data => {
         this.setState({
-          trailer: data.videos
+          trailer: data.videos[0]
         })
       })
     }
   }
 
-  displayInfoPage = (id) => {
+  updateSelectedMovieId = (id) => {
     this.setState({selectedMovieId: id});
   };
 
@@ -58,8 +58,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state)
-
     return (
       <>
         <nav>
@@ -71,7 +69,7 @@ class App extends Component {
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
           {this.state.isLoading && <h2>Page Loading...</h2>}
           <Route
-            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} displayInfoPage={this.displayInfoPage} />}
+            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} trailer={this.state.trailer}/>}
           />
           <Route
             exact path='/:id' render={({ match }) => {

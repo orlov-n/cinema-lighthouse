@@ -3,14 +3,14 @@ import './MoviesContainer.css';
 import MovieCard from './MovieCard';
 import { Link } from 'react-router-dom';
 
-const MoviesContainer = ({ movieData, displayInfoPage }) => {
+const MoviesContainer = ({ movieData, updateSelectedMovieId, trailer }) => {
     const movieCards = movieData.map(movie => {
         return (
-            <Link to={`/${movie.id}`} style={{ textDecoration: 'none' }}>
+            <Link to={`/${movie.id}`} style={{ textDecoration: 'none' }} key={movie.id}>
                 <MovieCard 
-                    key={movie.id}
                     movie={movie}
-                    displayInfoPage={displayInfoPage}
+                    updateSelectedMovieId={updateSelectedMovieId}
+                    trailer={trailer}
                 />
             </Link>
         );

@@ -1,6 +1,7 @@
 .movies-container {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     height: 100%;
-}
+    flex-wrap: wrap;
+     } 
+    

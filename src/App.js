@@ -38,19 +38,26 @@ class App extends Component {
     })
   };
 
-  componentDidUpdate = (prvProps, prvState) => {
-    if (prvState.selectedMovieId !== this.state.selectedMovieId) {
-      getSelectedTrailer(this.state.selectedMovieId)
-      .then(data => {
-        this.setState({
-          trailer: data.videos[0]
-        })
-      })
-    }
-  }
+  // componentDidUpdate = (prvProps, prvState) => {
+  //   if (prvState.selectedMovieId !== this.state.selectedMovieId) {
+  //     // getSelectedTrailer(this.state.selectedMovieId)
+  //     .then(data => {
+  //       this.setState({
+  //         trailer: data.videos[0]
+  //       })
+  //     })
+  //   }
+  // }
 
   updateSelectedMovieId = (id) => {
-    this.setState({selectedMovieId: id});
+    // this.setState({selectedMovieId: id});
+    getSelectedTrailer(id) 
+    .then(data => {
+      this.setState({
+        trailer: data.videos[0],
+        selectedMovieId: id
+      })
+    })
   };
 
   displayHomePage = () => {
@@ -69,7 +76,7 @@ class App extends Component {
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
           {this.state.isLoading && <h2>Page Loading...</h2>}
           <Route
-            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} trailer={this.state.trailer}/>}
+            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} selectedMovieId={this.state.selectedMovieId} trailer={this.state.trailer}/>}
           />
           <Route
             exact path='/:id' render={({ match }) => {

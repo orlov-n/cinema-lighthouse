@@ -69,7 +69,17 @@ class App extends Component {
       <>
         <nav>
           <Link to={'/'} style={{ textDecoration: 'none' }}>
-            <h1>Rancid Tomatillos</h1>
+          <div class="text-container">
+  <span>r</span>
+  <span>a</span>
+  <span>ncid</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>t</span>
+  
+  <span>o</span>
+  <span>mati</span>
+  <span>llos</span>
+</div>
           </Link>
         </nav>
         <main>

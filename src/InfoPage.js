@@ -32,6 +32,7 @@ class InfoPage extends Component {
       <>
         {this.state.isError ? <Error errorMessage={this.state.errorMessage} /> :
           <article className='movie-info-container' style={{backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`}}>
+            <div className='info-mask'>
             <div className="rotating-box">
               <div className="rotating-box-inner">
                 <div className="rotating-box-front">
@@ -47,6 +48,7 @@ class InfoPage extends Component {
                   <h2 className='selected-movie-average-rating'>{Math.round(this.state.selectedMovie.average_rating * 10) / 10}/10</h2>
                 </div>
               </div>
+            </div>
             </div>
           </article>
         }

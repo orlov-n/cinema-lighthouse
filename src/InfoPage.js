@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './InfoPage.css';
 import { getSelectedMovie } from './apiCalls';
-import Error from './Error';
 
 class InfoPage extends Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class InfoPage extends Component {
   render() {
     return (
       <>
-        {this.state.errorMessage ? <Error errorMessage={this.state.errorMessage} /> :
+        {this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> :
           <article className='movie-info-container' style={{backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`}}>
             <div className='info-mask'>
               <div className="rotating-box">

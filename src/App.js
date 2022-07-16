@@ -3,9 +3,7 @@ import './App.css';
 import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies, getSelectedTrailer } from './apiCalls';
-import Error from './Error';
 import { NavLink, Route } from 'react-router-dom';
-
 
 class App extends Component {
   constructor() {
@@ -58,7 +56,7 @@ class App extends Component {
           </NavLink>
         </nav>
         <main>
-          {this.state.errorMessage && <Error errorMessage={this.state.errorMessage} />}
+          {this.state.errorMessage && <h2>{this.state.errorMessage}</h2>}
           {!this.state.movies.length && <h2>Page Loading...</h2>}
           <Route
             exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} selectedMovieId={this.state.selectedMovieId} trailer={this.state.trailer}/>}

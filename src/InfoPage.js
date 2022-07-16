@@ -2,24 +2,35 @@ import React, { Component } from 'react';
 import './InfoPage.css';
 import { getSelectedMovie } from './apiCalls';
 
+let genres;
+
 class InfoPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedMovie: {},
-      errorMessage: ''
+      errorMessage: '',
     };
   };
 
   componentDidMount = () => {
     getSelectedMovie(this.props.selectedMovieId)
     .then(data => {
-      this.setState({selectedMovie: data.movie})
+      genres = data.movie.genres.join(' | ');
+      this.setState({selectedMovie: data.movie}) 
     })
     .catch(error => {
       console.log(error);
-      this.setState({errorMessage: error})
+      this.setState({errorMessage: this.props.throwError(error)})
     })
+  };
+
+  throwError = (response) => {
+    if (!response.ok) {
+      throw new Error("Something went wrong, please try again!");
+    } else {
+      return response.json();
+    };
   };
 
   render() {
@@ -38,7 +49,7 @@ class InfoPage extends Component {
                     <h3 className='tagline'>{this.state.selectedMovie.tagline}</h3>
                     <p className="information">
                       <b>RELEASE DATE</b>: {this.state.selectedMovie.release_date} <br></br><br></br>
-                      {this.state.selectedMovie.genres} <br></br><br></br>
+                      {genres} <br></br><br></br>
                       {Math.round(this.state.selectedMovie.average_rating * 10) / 10}/10 ⭐️ <br></br><br></br>
                       <b>RUNTIME</b>: {this.state.selectedMovie.runtime} MINUTES
                     </p>

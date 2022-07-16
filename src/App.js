@@ -24,7 +24,7 @@ class App extends Component {
     })
     .catch(error => {
       console.log(error);
-      this.setState({errorMessage: error})
+      this.setState({errorMessage: this.throwError(error)})
     })
   };
 
@@ -38,6 +38,14 @@ class App extends Component {
     })
   };
 
+  throwError = (response) => {
+    if (!response.ok) {
+      throw new Error("Something went wrong, please try again!");
+    } else {
+      return response.json();
+    };
+  };
+  
   render() {
     return (
       <>
@@ -63,7 +71,7 @@ class App extends Component {
           />
           <Route
             exact path='/:id' render={({ match }) => {
-              return <InfoPage selectedMovieId={match.params.id} />
+              return <InfoPage selectedMovieId={match.params.id} throwError={this.throwError}/>
             }}
           /> 
         </main>

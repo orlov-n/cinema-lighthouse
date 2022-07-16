@@ -2,8 +2,10 @@
   border: solid blue 1px;
 } */
 
+
+
 main {
-  background-color: #55508c;
+  background-color: rgb(189, 184, 176);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -12,8 +14,11 @@ main {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #211E42;
-  height: 11vh;
+  background-color: #000000;
+  height: 15vh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; 
+  font-size: 5rem; 
+  background-image: linear-gradient(180deg, black, rgb(153, 152, 151));
 }
 
 h1 {
@@ -22,3 +27,46 @@ h1 {
   color: rgb(209, 200, 154);
 }
 
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+
+
+.text-container > span {
+  text-transform: uppercase;
+  animation: glow 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px #b90c06, 0 0 50px #dd3506, 0 0 100px #ddbd06;
+    color: rgba(173, 162, 160, 0.916);
+  }
+  
+  80%, 90% {
+    /* color: #111; */
+    text-shadow: none;
+  }
+}
+
+.text-container > span:nth-child(2) {
+	animation-delay: 5.25s;
+}
+
+.text-container > span:nth-child(3) {
+	animation-delay: 2s;
+}
+
+.text-container > span:nth-child(4) {
+	animation-delay: 5s;
+}
+
+.text-container > span:nth-child(5) {
+	animation-delay: 3s;
+}
+
+.text-container > span:nth-child(6) {
+	animation-delay: 4.25s;
+}
+
+.text-container > span:nth-child(7) {
+	animation-delay: 4.5s;
+}

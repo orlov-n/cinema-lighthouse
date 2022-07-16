@@ -1,17 +1,67 @@
-img {
-    height: 20vh;
-}
-
 .card {
     cursor: pointer;
     color: white;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 2vh;
-    height: 20vh;
-    width: 17vw;
+    height: 36vh;
+    margin: 2vh;
 }
 
-.card > p {
-    margin-bottom: 0;
+p {
+    margin-bottom: 8vh;
+    margin-left: .6vh;
+    margin-top: 0px;
+} 
+
+.container .card .face {
+    width: 340px;
+    height: 200px;
+    transition: 1s;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    background: rgb(18, 17, 17);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+    height: 94px;
+}
+
+.container .card:hover .face.face1 {
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content img {
+    width: 340px;
+    height: 200px;
+    box-shadow: 10px 16px 58px -13px rgba(0, 0, 0, 1);
+}
+
+.container .card .face.face2 {
+    background: rgb(19, 17, 17);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+img {
+    min-width: 340px;
+    min-height: 210px;
+}
+
+.trailer {
+    width: 340px;
+    height: 200px;
+}
+
+.face.face1 {
+    height: 333px;
+}
+
+.face.face2 {
+    height: 303px;
 }

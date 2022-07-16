@@ -1,13 +1,13 @@
 .rotating-box {
   background-color: transparent;
-  width: 30vw;
+  width: 26vw;
   height: 88vh;
   perspective: 1000px; 
 }
 
 .rotating-box-inner {
   position: relative;
-  width: 30vw;
+  width: 26vw;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
@@ -21,28 +21,41 @@
 .rotating-box-front,
 .rotating-box-back {
   position: absolute;
-  width: 30vw;
-  height: 100%;
+  width: 26vw;
+  height: 90%;
+  margin-top: 3vh;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .rotating-box-front {
-  background-color: #13315c;
+  background-color: #000000;
   color: black;
-  width: 30vw;
+  width: 26vw;
 }
 
 .rotating-box-back {
-  background-color: #13315c;
+  background-color: #000000;
   color: white;
   transform: rotateY(180deg);
-  width: 30vw;
+  width: 26vw;
 }
 
 .rotating-image {
   height: 100%;
-  width: 30vw;
+  width: 26vw;
+}
+
+.info-mask {
+  background-color: rgb(149, 146, 146);
+  width: 100%;
+  height: 100%;
+  opacity: 93%;
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
 }
 
 .movie-info-container {
@@ -50,6 +63,5 @@
   justify-content: center;
   background-position: center;
   overflow: hidden;
-  height: 100%;
   background-size: cover;
 }

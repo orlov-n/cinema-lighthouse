@@ -4,7 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies, getSelectedTrailer } from './apiCalls';
 import Error from './Error';
-import { Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 
 
 class App extends Component {
@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <>
         <nav>
-          <Link to={'/'} style={{ textDecoration: 'none' }}>
+          <NavLink to={'/'} style={{ textDecoration: 'none' }}>
             <div className="text-container">
               <span>r</span>
               <span>a</span>
@@ -55,7 +55,7 @@ class App extends Component {
               <span>mati</span>
               <span>llos</span>
             </div>  
-          </Link>
+          </NavLink>
         </nav>
         <main>
           {this.state.errorMessage && <Error errorMessage={this.state.errorMessage} />}

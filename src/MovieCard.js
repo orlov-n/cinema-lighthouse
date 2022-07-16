@@ -3,7 +3,7 @@ import './MovieCard.css';
 
 const MovieCard = ({ movie, updateSelectedMovieId, trailer }) => { 
     return (
-        <div className="container">
+        <div className="card-container">
             <div className="card">
                 <div className="face face1">
                      <div className='content' onMouseOver={() => updateSelectedMovieId(movie.id)}>

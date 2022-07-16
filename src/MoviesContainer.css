@@ -4,6 +4,11 @@
     height: 100%;
     flex-wrap: wrap;
     padding: 1vw;
-    padding-top: 7vh;
+    padding-top: 1vh;
      } 
     
+     .movies-container::after {
+        content: "";
+        flex: unset;
+        margin-left: 17.5vw;
+      }

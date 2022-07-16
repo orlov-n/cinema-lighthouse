@@ -55,7 +55,6 @@ class App extends Component {
   };
 
   render() {
-    console.log('this is the state', this.state.movies)
     return (
       <>
         <nav>
@@ -63,12 +62,21 @@ class App extends Component {
           <div className="text-container">
             <span>r</span>
             <span>a</span>
-            <span>ncid</span>
+            <span>n</span>
+            <span>c</span>
+            <span>i</span>
+            <span>d</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span>t</span>
             <span>o</span>
-            <span>mati</span>
-            <span>llos</span>
+            <span>m</span>
+            <span>a</span>
+            <span>t</span>
+            <span>i</span>
+            <span>l</span>
+            <span>l</span>
+            <span>o</span>
+            <span>s</span>
           </div>  
           </NavLink>
         </nav>

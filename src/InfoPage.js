@@ -8,7 +8,6 @@ class InfoPage extends Component {
     super(props);
     this.state = {
       selectedMovie: {},
-      isError: false,
       errorMessage: ''
     };
   };
@@ -20,10 +19,7 @@ class InfoPage extends Component {
     })
     .catch(error => {
       console.log(error);
-      this.setState({
-        isError: true,
-        errorMessage: error
-      })
+      this.setState({errorMessage: error})
     })
   };
 

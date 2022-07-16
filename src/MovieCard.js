@@ -1,10 +1,7 @@
 import React from 'react';
 import './MovieCard.css';
-// import YouTube from 'react-youtube';
-// import ReactPlayer from 'react-player'
 
-const MovieCard = ({ movie, updateSelectedMovieId, trailer }) => {
-  
+const MovieCard = ({ movie, updateSelectedMovieId, trailer }) => { 
     return (
         <div className="container">
             <div className="card">
@@ -16,13 +13,11 @@ const MovieCard = ({ movie, updateSelectedMovieId, trailer }) => {
                 </div>
                 <div className="face face2">
                     <div className="content">
-                    <iframe className='trailer' width="360" height="215" src={trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
+                        <iframe className='trailer' width="360" height="215" src={trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>   
     );
 };
 

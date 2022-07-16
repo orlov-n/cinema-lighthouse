@@ -2,7 +2,7 @@
     cursor: pointer;
     color: white;
     height: 36vh;
-    margin: 2vh;
+    margin-top: 5vh;
 }
 
 .card-container .card .face {
@@ -19,7 +19,7 @@
     align-items: center;
     z-index: 1;
     transform: translateY(100px);
-    height: 94px;
+    height: 153px;
 }
 
 .card-container .card:hover .face.face1 {
@@ -38,9 +38,8 @@ img {
 }
 
 p {
-    margin-bottom: 8vh;
     margin-left: .6vh;
-    margin-top: 0px;
+    margin-top: 0;
 } 
 
 .card-container .card .face.face2 {

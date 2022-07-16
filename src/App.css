@@ -5,7 +5,6 @@
 
 
 main {
-  /* background-color: #55508c; */
   background-color: rgb(189, 184, 176);
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +18,9 @@ nav {
   height: 15vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; 
   font-size: 5rem; 
+  /* background: linear-gradient (90.06deg, #000 2%,transparent 26.63%); */
+  background-image: linear-gradient(180deg, black, rgb(153, 152, 151));
+  /* background-image: linear-gradient (0.06deg, #000 22%,transparent 16.63%); */
 
 }
 
@@ -38,9 +40,8 @@ h1 {
 
 @keyframes glow {
   0%, 100% {
-    /* color: #FFF; */
     text-shadow: 0 0 10px #b90c06, 0 0 50px #dd3506, 0 0 100px #ddbd06;
-    color: rgb(145, 131, 131);
+    color: rgba(173, 162, 160, 0.916);
   }
   
   80%, 90% {

@@ -38,17 +38,6 @@ class App extends Component {
     })
   };
 
-  // componentDidUpdate = (prvProps, prvState) => {
-  //   if (prvState.selectedMovieId !== this.state.selectedMovieId) {
-  //     // getSelectedTrailer(this.state.selectedMovieId)
-  //     .then(data => {
-  //       this.setState({
-  //         trailer: data.videos[0]
-  //       })
-  //     })
-  //   }
-  // }
-
   updateSelectedMovieId = (id) => {
     // this.setState({selectedMovieId: id});
     getSelectedTrailer(id) 
@@ -70,16 +59,16 @@ class App extends Component {
         <nav>
           <Link to={'/'} style={{ textDecoration: 'none' }}>
           <div class="text-container">
-  <span>r</span>
-  <span>a</span>
-  <span>ncid</span>
-  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <span>t</span>
-  
-  <span>o</span>
-  <span>mati</span>
-  <span>llos</span>
-</div>
+            <span>r</span>
+            <span>a</span>
+            <span>ncid</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>t</span>
+            
+            <span>o</span>
+            <span>mati</span>
+            <span>llos</span>
+          </div>  
           </Link>
         </nav>
         <main>
@@ -90,9 +79,10 @@ class App extends Component {
           />
           <Route
             exact path='/:id' render={({ match }) => {
+              console.log('match: ', match)
               return <InfoPage selectedMovieId={match.params.id} />
             }}
-          />
+          /> 
         </main>
       </>
     );

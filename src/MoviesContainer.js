@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const MoviesContainer = ({ movieData, updateSelectedMovieId, trailer, selectedMovieId }) => {
     const movieCards = movieData.map(movie => {
-        console.log( 'trailer', trailer)
-        console.log('movie.id', movie.id)
+        // console.log( 'trailer', trailer)
+        // console.log('movie.id', movie.id)
         let potentialTrailer =`https://www.youtube.com/embed/`
         movie.id === selectedMovieId ? potentialTrailer += trailer.key + `?mute=1&autoplay=1` : potentialTrailer = ''
         return (

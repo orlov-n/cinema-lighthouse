@@ -4,7 +4,7 @@
   background-position: center;
   overflow: hidden;
   background-size: cover;
-  background: linear-gradient(to bottom, rgb(189, 184, 176), #000000 100%, rgb(189, 184, 176) 55%, #3d3b3b 90%, rgb(189, 184, 176) 425%);
+  height: 88vh;
 }
 
 .info-mask {
@@ -17,7 +17,7 @@
   background-position: center;
   overflow: hidden;
   background-size: cover;
-  height: 88vh;
+  background: linear-gradient(to bottom, rgb(189, 184, 176), #000000 100%, rgb(189, 184, 176) 55%, #3d3b3b 90%, rgb(189, 184, 176) 425%);
 }
 
 .rotating-box {

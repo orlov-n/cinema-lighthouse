@@ -2,22 +2,16 @@
     cursor: pointer;
     color: white;
     height: 36vh;
-    margin: 2vh;
+    margin-top: 5vh;
 }
 
-p {
-    margin-bottom: 8vh;
-    margin-left: .6vh;
-    margin-top: 0px;
-} 
-
-.container .card .face {
+.card-container .card .face {
     width: 340px;
     height: 200px;
     transition: 1s;
 }
 
-.container .card .face.face1 {
+.card-container .card .face.face1 {
     position: relative;
     background: rgb(18, 17, 17);
     display: flex;
@@ -25,27 +19,17 @@ p {
     align-items: center;
     z-index: 1;
     transform: translateY(100px);
-    height: 94px;
+    height: 153px;
 }
 
-.container .card:hover .face.face1 {
+.card-container .card:hover .face.face1 {
     transform: translateY(0);
 }
 
-.container .card .face.face1 .content img {
+.card-container .card .face.face1 .content img {
     width: 340px;
     height: 200px;
     box-shadow: 10px 16px 58px -13px rgba(0, 0, 0, 1);
-}
-
-.container .card .face.face2 {
-    background: rgb(19, 17, 17);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-    transform: translateY(-100px);
-}
-
-.container .card:hover .face.face2 {
-    transform: translateY(0);
 }
 
 img {
@@ -53,9 +37,19 @@ img {
     min-height: 210px;
 }
 
-.trailer {
-    width: 340px;
-    height: 200px;
+p {
+    margin-left: .6vh;
+    margin-top: 0;
+} 
+
+.card-container .card .face.face2 {
+    background: rgb(19, 17, 17);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+    transform: translateY(-100px);
+}
+
+.card-container .card:hover .face.face2 {
+    transform: translateY(0);
 }
 
 .face.face1 {
@@ -64,4 +58,9 @@ img {
 
 .face.face2 {
     height: 303px;
+}
+
+.trailer {
+    width: 340px;
+    height: 200px;
 }

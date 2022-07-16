@@ -5,19 +5,17 @@ import { Link } from 'react-router-dom';
 
 const MoviesContainer = ({ movieData, updateSelectedMovieId, trailer, selectedMovieId }) => {
     if (!trailer) {
-        trailer = {key: ''}
-    }
+        trailer = {key: ''};
+    };
     const movieCards = movieData.map(movie => {
-        console.log( 'trailer', trailer)
-        // console.log('movie.id', movie.id)
-        let potentialTrailer =`https://www.youtube.com/embed/`
-        movie.id === selectedMovieId ? potentialTrailer += trailer.key + `?mute=1&autoplay=1` : potentialTrailer = ''
+        let trailerUrl =`https://www.youtube.com/embed/`;
+        movie.id === selectedMovieId ? trailerUrl += trailer.key + `?mute=1&autoplay=1` : trailerUrl = '';
         return (
-            <Link to={`/${movie.id}`} style={{ textDecoration: 'none' }} key={movie.id}>
+            <Link to={`/${movie.id}`} style={{textDecoration: 'none'}} key={movie.id}>
                 <MovieCard 
                     movie={movie}
                     updateSelectedMovieId={updateSelectedMovieId}
-                    trailer={potentialTrailer}
+                    trailer={trailerUrl}
                 />
             </Link>
         );

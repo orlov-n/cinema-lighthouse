@@ -1,3 +1,25 @@
+.movie-info-container {
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
+  height: 88vh;
+}
+
+.info-mask {
+  background-color: rgb(149, 146, 146);
+  width: 100%;
+  height: 100%;
+  opacity: 93%;
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgb(189, 184, 176), #000000 100%, rgb(189, 184, 176) 55%, #3d3b3b 90%, rgb(189, 184, 176) 425%);
+}
+
 .rotating-box {
   background-color: transparent;
   width: 26vw;
@@ -10,7 +32,7 @@
   width: 26vw;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 1.3s;
   transform-style: preserve-3d;
 }
 
@@ -34,34 +56,29 @@
   width: 26vw;
 }
 
-.rotating-box-back {
-  background-color: #000000;
-  color: white;
-  transform: rotateY(180deg);
-  width: 26vw;
-}
-
 .rotating-image {
   height: 100%;
   width: 26vw;
 }
 
-.info-mask {
-  background-color: rgb(149, 146, 146);
-  width: 100%;
-  height: 100%;
-  opacity: 93%;
+.rotating-box-back {
+  background-color: #000000;
+  color: white;
+  transform: rotateY(180deg);
+  width: 26vw;
   display: flex;
-  justify-content: center;
-  background-position: center;
-  overflow: hidden;
-  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.movie-info-container {
-  display: flex;
-  justify-content: center;
-  background-position: center;
-  overflow: hidden;
-  background-size: cover;
+.title {
+  margin-top: 5vh;
+}
+
+.tagline {
+  margin-bottom: 10vh;
+}
+
+.overview {
+  padding: 1vw;
 }

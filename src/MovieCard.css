@@ -15,8 +15,6 @@ p {
     width: 340px;
     height: 200px;
     transition: 1s;
-    /* box-shadow: 0 10px 50px rgba(0, 0, 0, 1); */
-
 }
 
 .container .card .face.face1 {
@@ -28,21 +26,16 @@ p {
     z-index: 1;
     transform: translateY(100px);
     height: 94px;
-    /* box-shadow: 0 10px 50px rgba(0, 0, 0, 1); */
-
 }
 
 .container .card:hover .face.face1 {
     transform: translateY(0);
-    /* box-shadow: 0 10px 50px rgba(0, 0, 0, 1); */
-
 }
 
 .container .card .face.face1 .content img {
     width: 340px;
     height: 200px;
     box-shadow: 10px 16px 58px -13px rgba(0, 0, 0, 1);
-
 }
 
 .container .card .face.face2 {
@@ -71,5 +64,4 @@ img {
 
 .face.face2 {
     height: 303px;
-    
 }

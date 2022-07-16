@@ -18,10 +18,7 @@ nav {
   height: 15vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; 
   font-size: 5rem; 
-  /* background: linear-gradient (90.06deg, #000 2%,transparent 26.63%); */
   background-image: linear-gradient(180deg, black, rgb(153, 152, 151));
-  /* background-image: linear-gradient (0.06deg, #000 22%,transparent 16.63%); */
-
 }
 
 h1 {

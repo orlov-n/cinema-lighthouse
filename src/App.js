@@ -24,8 +24,9 @@ class App extends Component {
   componentDidMount = () => {
     getMovies()
     .then(data => {
+      const filteredMovies = data.movies.filter(movie => movie.backdrop_path !== "https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg" && movie.backdrop_path !== '')
       this.setState({
-        movies: data.movies,
+        movies: filteredMovies,
         isLoading: false
       })
     })
@@ -64,7 +65,6 @@ class App extends Component {
             <span>ncid</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span>t</span>
-            
             <span>o</span>
             <span>mati</span>
             <span>llos</span>

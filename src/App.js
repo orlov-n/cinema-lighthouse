@@ -4,7 +4,7 @@ import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies, getSelectedTrailer } from './apiCalls';
 import Error from './Error';
-import { Link, Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 
 class App extends Component {
@@ -55,11 +55,12 @@ class App extends Component {
   };
 
   render() {
+    console.log('this is the state', this.state.movies)
     return (
       <>
         <nav>
-          <Link to={'/'} style={{ textDecoration: 'none' }}>
-          <div class="text-container">
+          <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+          <div className="text-container">
             <span>r</span>
             <span>a</span>
             <span>ncid</span>
@@ -69,7 +70,7 @@ class App extends Component {
             <span>mati</span>
             <span>llos</span>
           </div>  
-          </Link>
+          </NavLink>
         </nav>
         <main>
           {this.state.isError && <Error errorMessage={this.state.errorMessage} />}
@@ -79,7 +80,6 @@ class App extends Component {
           />
           <Route
             exact path='/:id' render={({ match }) => {
-              console.log('match: ', match)
               return <InfoPage selectedMovieId={match.params.id} />
             }}
           /> 

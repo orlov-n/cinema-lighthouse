@@ -20,17 +20,9 @@ class InfoPage extends Component {
       this.setState({selectedMovie: data.movie}) 
     })
     .catch(error => {
-      console.log(error);
-      this.setState({errorMessage: this.props.throwError(error)})
+      console.log(error.message);
+      this.setState({errorMessage: this.props.showError(error)})
     })
-  };
-
-  throwError = (response) => {
-    if (!response.ok) {
-      throw new Error("Something went wrong, please try again!");
-    } else {
-      return response.json();
-    };
   };
 
   render() {

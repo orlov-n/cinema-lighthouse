@@ -74,6 +74,10 @@ nav {
 	animation-delay: .7s;
 }
 
+.text-container > span:nth-child(9) {
+	animation-delay: .8s;
+}
+
 .text-container > span:nth-child(10) {
 	animation-delay: .9s;
 }

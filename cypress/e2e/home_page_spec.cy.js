@@ -1,5 +1,9 @@
 describe('visit home page', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      fixture: "movies.json",
+      statusCode: 200
+    })
     cy.visit("http://localhost:3000/")
   })
 
@@ -32,16 +36,18 @@ describe('visit home page', () => {
       })
     })
   })
-  it.only('Should display youtube trailer on hover', ()=> {
+  it('Should display youtube trailer on hover', ()=> {
     cy.get('.card-container').eq(0).within(()=> {
       cy.get('.card').within(()=> {
         cy.get('.face2').within(()=> {
           cy.get('.content')
-          .invoke('mouseover')
-          // .within(()=> {
-          //   cy.get('iframe').should('have.attr', 'src', 'https://youtu.be/aETz_dRDEys' )
-            
+          .realHover()
+          // .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
+          //   statusCode: 200
           // })
+          .within(()=> {
+            cy.get('iframe')
+          })
         })
       })
     })

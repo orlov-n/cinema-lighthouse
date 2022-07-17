@@ -23,8 +23,8 @@ class App extends Component {
       this.setState({movies: filteredMovies})
     })
     .catch(error => {
-      console.log(error);
-      this.setState({errorMessage: this.throwError(error)})
+      console.log(error.message);
+      this.setState({errorMessage: this.showError(error)})
     })
   };
 
@@ -38,9 +38,9 @@ class App extends Component {
     })
   };
 
-  throwError = (response) => {
+  showError = (response) => {
     if (!response.ok) {
-      throw new Error("Something went wrong, please try again!");
+     return ("Something went wrong, please try again!");
     };
   };
   
@@ -72,13 +72,12 @@ class App extends Component {
         </nav>
         <main>
           {this.state.errorMessage && <h2>{this.state.errorMessage}</h2>}
-          {!this.state.movies.length && <h2>Page Loading...</h2>}
           <Route
             exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} selectedMovieId={this.state.selectedMovieId} trailer={this.state.trailer}/>}
           />
           <Route
             exact path='/:id' render={({ match }) => {
-              return <InfoPage selectedMovieId={match.params.id} throwError={this.throwError}/>
+              return <InfoPage selectedMovieId={match.params.id} showError={this.showError}/>
             }}
           /> 
         </main>

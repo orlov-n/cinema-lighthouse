@@ -36,13 +36,15 @@ describe('visit home page', () => {
       })
     })
   })
-  it('Should display youtube trailer on hover', ()=> {
+
+  it.skip('Should display youtube trailer on hover', ()=> {
     cy.get('.card-container').eq(0).within(()=> {
       cy.get('.card').within(()=> {
         cy.get('.face2').within(()=> {
           cy.get('.content')
           .realHover()
-          // .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
+          // cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
+          //   fixture: "trailer.json",
           //   statusCode: 200
           // })
           .within(()=> {
@@ -52,5 +54,17 @@ describe('visit home page', () => {
       })
     })
   })
+
+  it('Should be able to click on a movie card and be redirected to the movie info page', (() => {
+    cy.get('.card-container').eq(0).click()
+    cy.url().should('eq', 'http://localhost:3000/694919')
+  }))
+
+  it.only('Should show an error message if the server is down', (() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500
+    })
+    .get('h2').contains('Something went wrong, please try again!')
+  }))
 
 })

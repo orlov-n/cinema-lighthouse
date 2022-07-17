@@ -21,16 +21,8 @@ class InfoPage extends Component {
     })
     .catch(error => {
       console.log(error);
-      this.setState({errorMessage: this.props.throwError(error)})
+      this.setState({errorMessage: this.props.showError(error)})
     })
-  };
-
-  throwError = (response) => {
-    if (!response.ok) {
-      throw new Error("Something went wrong, please try again!");
-    } else {
-      return response.json();
-    };
   };
 
   render() {

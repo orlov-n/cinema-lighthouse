@@ -7,21 +7,21 @@ describe('visit home page', () => {
     cy.visit("http://localhost:3000/")
   })
 
-  it('Should confirm that true is equal to true', () => {
+  it.skip('Should confirm that true is equal to true', () => {
     expect(true).to.equal(true)
   })
 
-  it('Should display a header of RANCID TOMATILLOS', ()=> {
+  it.skip('Should display a header of RANCID TOMATILLOS', ()=> {
       cy.get('.text-container').contains('rancid tomatillos')
   })
 
-  it('Should display all movie cards', ()=> {
+  it.skip('Should display all movie cards', ()=> {
     cy.get('.movies-container').within(()=> {
       cy.get('.card-container').should('have.length', 39)
     })
   })
 
-  it('Should display movie cards with image and titles', ()=> {
+  it.skip('Should display movie cards with image and titles', ()=> {
     cy.get('.card-container').eq(0).within(()=> {
       cy.get('.card').within(()=> {
         cy.get('.face').within(()=> {
@@ -60,9 +60,16 @@ describe('visit home page', () => {
     cy.url().should('eq', 'http://localhost:3000/694919')
   }))
 
-  it.only('Should show an error message if the server is down', (() => {
+  it('Should show an error message if the server is down', (() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 500
+    })
+    .get('h2').contains('Something went wrong, please try again!')
+  }))
+
+  it('Should show an error message if the page is not found', (() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 404
     })
     .get('h2').contains('Something went wrong, please try again!')
   }))

@@ -10,7 +10,6 @@
   overflow: hidden;
   background-size: cover;
   height: 88vh;
-  
 }
 
 .info-mask {
@@ -77,53 +76,43 @@
   justify-content: flex-start;
   padding: 3px;
   background: linear-gradient(to right, rgb(155, 119, 21), rgb(86, 75, 35));
-
-
 }
 
 .info-container {
   height: 100%;
   background: linear-gradient(to top, rgb(30, 29, 29), rgb(17, 17, 14));
-  
-
-}
-
-.rotating-box-back {
-	background: linear-gradient(5deg, #000, #272727);
-}
-
-.rotating-box-back:before, .rotating-box-back:after {
-	content: '';
-	position: absolute;
-	/* left: 0px; */
-	top: -1px;
-  bottom: -2px;
-  right: 0px;
-	background: linear-gradient(45deg, #eeebe4, #e0e0f1, #deeede,#f4ed8a, #f3ce6a, #f3e3d0, 
-		#f4e8e8, #f3f4ec,#f4f4e9, #f3df8e);
-	background-size: 400%;
-	width: calc(100% + 1px);
-	height: calc(100% + 1px);
-	z-index: -1;
-	animation: steam 26s linear infinite;
 }
 
 @keyframes steam {
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 700% 0%;
-	}
-	100% {
-		background-position: 0 0;
-	}
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 700% 0%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.rotating-box-back:before, .rotating-box-back:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -2px;
+  right: 0px;
+  background: linear-gradient(45deg, #eeebe4, #e0e0f1, #deeede,#f4ed8a, #f3ce6a, #f3e3d0, 
+    #f4e8e8, #f3f4ec,#f4f4e9, #f3df8e);
+  background-size: 400%;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  z-index: -1;
+  animation: steam 26s linear infinite;
 }
 
 .rotating-box-back:after {
-	filter: blur(50px);
+  filter: blur(50px);
 }
-
 
 .title {
   font-family: 'David Libre';
@@ -131,7 +120,6 @@
   letter-spacing: 8px;
   color: #fff;
   text-align: center;
-  /* height: 8vh; */
   font-variant: small-caps;
   font-style: italic;
   margin: 2vh;
@@ -147,19 +135,16 @@
   margin: 0;
   padding: 0;
 }
+
 .tagline {
   margin-bottom: 5vh;
   margin: 0;
   font-family: Marker Felt;
   text-decoration: underline;
-
 }
 
 .information-wrapper {
   margin-top: 4vh;
-  
-  
-
 }
 
 .overview-wrapper {
@@ -169,6 +154,7 @@
   justify-content: flex-start;
   margin: 1vh;
 }
+
 .overview {
   padding: 1vw;
   font-family: 'Pragati Narrow', sans-serif;

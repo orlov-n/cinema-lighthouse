@@ -124,7 +124,7 @@
   font-style: italic;
   margin: 2vh;
   margin-bottom: 3vh;
-  margin-top: 6vh;
+  margin-top: 3vh;
 }
 
 .tagline-wrapper {
@@ -137,14 +137,19 @@
 }
 
 .tagline {
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
   margin: 0;
   font-family: Marker Felt;
   text-decoration: underline;
+  font-size: 1em;
 }
 
 .information-wrapper {
-  margin-top: 4vh;
+  margin-top: 3vh;
+}
+
+.information {
+  font-size: 0.85em;
 }
 
 .overview-wrapper {
@@ -156,7 +161,8 @@
 }
 
 .overview {
-  padding: 1vw;
+  padding: .3vw;
   font-family: 'Pragati Narrow', sans-serif;
+  font-size: 0.94em;
 }
 

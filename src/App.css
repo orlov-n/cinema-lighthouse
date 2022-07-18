@@ -19,7 +19,7 @@ nav {
   overflow: hidden;
   /* background-image: linear-gradient(180deg, black, rgb(153, 152, 151)); */
   transition: height 0.66s ease-out;
-  background: linear-gradient(to top, rgb(208, 197, 179), #000000 111%, rgb(223, 211, 192) 55%, #3d3b3b 190%, rgb(189, 184, 176) 25%);
+  background: linear-gradient(to top, rgb(189, 184, 176), #000000 111%, rgb(149, 146, 146) 55%, #3d3b3b 190%, rgb(189, 184, 176) 25%);
   padding-top: 1vh;
   padding-bottom: 3vh;
 }

@@ -27,10 +27,10 @@ to `package.json`, and then run `npm run cypress` to begin testing.
 
 ## Visual Walkthrough
 - User can view a list of movies on the home page
-![Home Page](src/images/home.gif)
+![Home Page](src/images/homepage.gif)
 
-- User can view more specific information about 
-![Selected Movie Information Page](src/images/info.gif)
+- User can view more specific information about a specified movie and click on header to return to home page
+![Selected Movie Information Page](src/images/infoPage.gif)
 
 ## Technologies Implemented
 - Javascript/HTML (JSX)

@@ -37,15 +37,25 @@ class InfoPage extends Component {
                     <img className='rotating-image'  src={this.state.selectedMovie.poster_path} alt='movie backdrop'></img> 
                   </div>
                   <div className="rotating-box-back">
-                    <h2 className='title'>{this.state.selectedMovie.title}</h2>
-                    <h3 className='tagline'>{this.state.selectedMovie.tagline}</h3>
-                    <p className="information">
-                      <b>RELEASE DATE</b>: {this.state.selectedMovie.release_date} <br></br><br></br>
-                      {genres} <br></br><br></br>
-                      {Math.round(this.state.selectedMovie.average_rating * 10) / 10}/10 ⭐️ <br></br><br></br>
-                      <b>RUNTIME</b>: {this.state.selectedMovie.runtime} MINUTES
-                    </p>
-                    <h3 className='overview'>{this.state.selectedMovie.overview}</h3>
+                    <div className='info-container'>
+                      <div className='title-wrapper'>
+                        <h2 className='title'>{this.state.selectedMovie.title}</h2>
+                      </div>
+                      <div className='tagline-wrapper'>
+                        <h3 className='tagline'>{this.state.selectedMovie.tagline}</h3>
+                      </div>
+                      <div className='information-wrapper'>
+                        <p className="information">
+                          <b>RELEASE DATE</b>: {this.state.selectedMovie.release_date} <br></br><br></br>
+                          {genres} <br></br><br></br>
+                          {Math.round(this.state.selectedMovie.average_rating * 10) / 10}/10 ⭐️ <br></br><br></br>
+                          <b>RUNTIME</b>: {this.state.selectedMovie.runtime} MINUTES
+                        </p>
+                      </div>
+                      <div className='overview-wrapper'>
+                        <h3 className='overview'>{this.state.selectedMovie.overview}</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

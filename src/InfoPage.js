@@ -22,15 +22,16 @@ class InfoPage extends Component {
       }); 
     })
     .catch(error => {
-      console.log(error.message);
-      this.setState({errorMessage: this.props.showError(error)})
+      console.log(error);
+      this.setState({errorMessage: `${this.props.showError(error)} ${error}`})
     })
   };
 
   render() {
     return (
       <>
-        {this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> :
+        {this.state.errorMessage && <h2>{this.state.errorMessage}</h2>}
+        {/* {this.state.errorMessage ? <h2 className='error'>{this.state.errorMessage}</h2> : */}
           <article className='movie-info-container' style={{backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`}}>
             <div className='info-mask'>
               <div className="rotating-box">
@@ -63,7 +64,7 @@ class InfoPage extends Component {
               </div>
             </div>
           </article>
-        }
+        {/* } */}
       </>
     );
   };

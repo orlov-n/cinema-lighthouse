@@ -5,13 +5,13 @@
     margin-top: 5vh;
 }
 
-.card-container .card .face {
+.card-container .card .half {
     width: 340px;
     height: 200px;
     transition: 1s;
 }
 
-.card-container .card .face.face1 {
+.card-container .card .half.top {
     position: relative;
     background: rgb(18, 17, 17);
     display: flex;
@@ -22,11 +22,11 @@
     height: 153px;
 }
 
-.card-container .card:hover .face.face1 {
+.card-container .card:hover .half.top {
     transform: translateY(0);
 }
 
-.card-container .card .face.face1 .content img {
+.card-container .card .half.top .content img {
     width: 340px;
     height: 200px;
     box-shadow: 10px 16px 58px -13px rgba(0, 0, 0, 1);
@@ -42,21 +42,21 @@ p {
     margin-top: 0;
 } 
 
-.card-container .card .face.face2 {
+.card-container .card .half.bottom {
     background: rgb(19, 17, 17);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
     transform: translateY(-100px);
 }
 
-.card-container .card:hover .face.face2 {
+.card-container .card:hover .half.bottom {
     transform: translateY(0);
 }
 
-.face.face1 {
+.half.top {
     height: 333px;
 }
 
-.face.face2 {
+.half.bottom {
     height: 303px;
 }
 

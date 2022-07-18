@@ -23,8 +23,8 @@ class App extends Component {
       this.setState({movies: filteredMovies})
     })
     .catch(error => {
-      console.log(error.message);
-      this.setState({errorMessage: this.showError(error)})
+      console.log(error);
+      this.setState({errorMessage: `${this.showError(error)} ${error.message}`})
     })
   };
 

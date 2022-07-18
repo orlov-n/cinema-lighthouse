@@ -2,26 +2,28 @@ import React, { Component } from 'react';
 import './InfoPage.css';
 import { getSelectedMovie } from './apiCalls';
 
-let genres;
-
 class InfoPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedMovie: {},
       errorMessage: '',
+      genres: []
     };
   };
 
   componentDidMount = () => {
     getSelectedMovie(this.props.selectedMovieId)
     .then(data => {
-      genres = data.movie.genres.join(' | ');
-      this.setState({selectedMovie: data.movie}) 
+      let genres = data.movie.genres.join(' | ');
+      this.setState({
+        selectedMovie: data.movie,
+        genres: genres
+      }); 
     })
     .catch(error => {
-      console.log(error.message);
-      this.setState({errorMessage: this.props.showError(error)})
+      console.log(error);
+      this.setState({errorMessage: `${this.props.showError(error)} ${error.message}`})
     })
   };
 
@@ -47,7 +49,7 @@ class InfoPage extends Component {
                       <div className='information-wrapper'>
                         <p className="information">
                           <b>RELEASE DATE</b>: {this.state.selectedMovie.release_date} <br></br><br></br>
-                          {genres} <br></br><br></br>
+                          {this.state.genres} <br></br><br></br>
                           {Math.round(this.state.selectedMovie.average_rating * 10) / 10}/10 ⭐️ <br></br><br></br>
                           <b>RUNTIME</b>: {this.state.selectedMovie.runtime} MINUTES
                         </p>

@@ -11,6 +11,9 @@
 #### Project Specs
 The rubric and specs can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
 
+## Deployed Link
+[Click Here](https://best-rancid-tomatillos.herokuapp.com/)
+
 ## Set Up
 1. Fork this [repository](https://github.com/orlov-n/Tomatillos-Rancid), and clone it into your local machine.
 2. Navigate into the repository.
@@ -29,7 +32,7 @@ to `package.json`, and then run `npm run cypress` to begin testing.
 - User can view a list of movies on the home page
 ![Home Page](src/images/homepage.gif)
 
-- User can view more specific information about a specified movie and click on header to return to home page
+- User can view more information about a specified movie and click on header to return to home page
 ![Selected Movie Information Page](src/images/infoPage.gif)
 
 ## Technologies Implemented

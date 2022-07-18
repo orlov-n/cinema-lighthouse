@@ -16,7 +16,7 @@ describe('Visit info page', () => {
   });
 
   it('Should display the poster image of the movie', () => {
-    cy.get('img').should('have.attr', 'src', "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg")
+    cy.get('img').should('have.attr', 'src', "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg");
   });
 
   it('Should display the title, genre, release date, rating, runtime, synopsis of the movie on hover', () => {
@@ -31,19 +31,5 @@ describe('Visit info page', () => {
       });
     });
   });
-
-  // it('Should show an error message if the server is down', (() => {
-  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
-  //     statusCode: 500
-  //   })
-  //   .get('h2').contains('Something went wrong, please try again!')
-  // }))
-
-  // it('Should show an error message if the page is not found', (() => {
-  //   cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
-  //     statusCode: 404
-  //   })
-  //   .get('h2').contains('Something went wrong, please try again!')
-  // }))
 
 });  

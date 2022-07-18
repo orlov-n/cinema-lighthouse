@@ -1,7 +1,3 @@
-/* * {
-  border: solid blue 1px;
-} */
-
 main {
   background-color: rgb(189, 184, 176);
   background-repeat: no-repeat;
@@ -17,7 +13,6 @@ nav {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; 
   font-size: 5rem; 
   overflow: hidden;
-  /* background-image: linear-gradient(180deg, black, rgb(153, 152, 151)); */
   transition: height 0.66s ease-out;
   background: linear-gradient(to top, rgb(189, 184, 176), #000000 111%, rgb(149, 146, 146) 55%, #3d3b3b 190%, rgb(189, 184, 176) 25%);
   padding-top: 1vh;

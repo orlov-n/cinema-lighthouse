@@ -6,7 +6,7 @@ const MovieCard = ({ movie, updateSelectedMovieId, trailer }) => {
         <div className="card-container">
             <div className="card">
                 <div className="half top">
-                     <div className='content' onMouseOver={() => updateSelectedMovieId(movie.id)}>
+                     <div className='content' onMouseEnter={() => updateSelectedMovieId(movie.id)}>
                         <img src={movie.backdrop_path} alt='movie backdrop'></img>
                         <p>{movie.title} {`(${movie.release_date.slice(0, 4)})`}</p>
                      </div>

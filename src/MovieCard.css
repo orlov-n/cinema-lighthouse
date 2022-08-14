@@ -8,7 +8,7 @@
 .card-container .card .half {
     width: 340px;
     height: 200px;
-    transition: 1s;
+    transition: 1.6s;
 }
 
 .card-container .card .half.top {

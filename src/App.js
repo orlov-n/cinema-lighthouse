@@ -23,22 +23,27 @@ const App = () => {
       console.log(error);
       setErrorMessage(`${showError(error)}`)
     })
-
-  }, [selectedMovieId, errorMessage])
+    // getTrailer(selectedMovieId)
+  // getTrailer(selectedMovieId)
+  }, [selectedMovieId, errorMessage, trailer])
 
 
 
   const updateSelectedMovieId = (id) => {
     setSelectedMovieId(id)
-    getSelectedTrailer(id) 
-    .then(data => {
-      console.log('trailer data', data)
-      console.log('this is data.videos', data.videos)
-     setTrailer(
-     data.videos[Math.floor((Math.random() * data.videos.length) + 0)]
- )
-    })
+    getTrailer(id)
   };
+
+
+  const getTrailer = async (id) => {
+    await getSelectedTrailer(id)
+    .then(data => {
+      id === data.videos.movie_id ?
+      setTrailer(
+        data.videos[0]) : getSelectedTrailer(id)
+        setTrailer(data.videos[0])
+     })
+   }
 
  const showError = (response) => {
     if (!response.ok) {

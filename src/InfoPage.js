@@ -6,7 +6,7 @@ import { getSelectedMovie } from './apiCalls';
 const InfoPage = ({selectedMovieId, showError}) => {
 
   const [selectedMovie, setSelectedMovie] = useState({})
-  // const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [genres, setGenres] = useState([])
 console.log('selected movie from infopage at the top', selectedMovieId)
 useEffect(() => {
@@ -17,17 +17,17 @@ useEffect(() => {
       setGenres(genres)
       setSelectedMovie(data.movie)
     
-    }, [])
-    // .catch(error => {
-    //   console.log(error);
-    //   setErrorMessage({errorMessage: `${showError(error)} ${error.message}`})
-    // })
+    }, [errorMessage])
+    .catch(error => {
+      console.log(error);
+      setErrorMessage(`${showError(error)}`)
+    })
 
 }, [])
 
     return (
       <>
-        {/* {errorMessage ? <h2>{errorMessage}</h2> : */}
+        {errorMessage ? <h2>{errorMessage}</h2> :
           <article className='movie-info-container' style={{backgroundImage: `url(${selectedMovie.backdrop_path})`}}>
             <div className='info-mask'>
               <div className="rotating-box">
@@ -60,7 +60,7 @@ useEffect(() => {
               </div>
             </div>
           </article>
-        {/* } */}
+        } 
       </>
     );
   };

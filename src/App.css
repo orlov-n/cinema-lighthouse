@@ -24,7 +24,7 @@ nav {
 }
 
 .text-container > span {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   animation: glow 9s ease-in-out infinite;
   margin-top: 0;
 }

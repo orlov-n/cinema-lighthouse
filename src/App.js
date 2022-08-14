@@ -10,7 +10,7 @@ const App = () => {
 
   const [movies, setMovies] = useState([])
   const [selectedMovieId, setSelectedMovieId] = useState(null)
-  // const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [trailer, setTrailer] = useState([])
 
   useEffect(() => {
@@ -19,12 +19,12 @@ const App = () => {
       const filteredMovies = data.movies.filter(movie => movie.backdrop_path !== "https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg" && movie.backdrop_path !== '');
       setMovies(filteredMovies)
     })
-    // .catch(error => {
-    //   console.log(error);
-    //   setErrorMessage(`${showError(error)} ${error.message}`)
-    // })
+    .catch(error => {
+      console.log(error);
+      setErrorMessage(`${showError(error)}`)
+    })
 
-  }, [selectedMovieId])
+  }, [selectedMovieId, errorMessage])
 
 
 
@@ -32,18 +32,19 @@ const App = () => {
     setSelectedMovieId(id)
     getSelectedTrailer(id) 
     .then(data => {
+      console.log('trailer data', data)
+      console.log('this is data.videos', data.videos)
      setTrailer(
-     data.videos[0]
-        // selectedMovieId: id
+     data.videos[Math.floor((Math.random() * data.videos.length) + 0)]
  )
     })
   };
 
-//  const showError = (response) => {
-//     if (!response.ok) {
-//      return ("Something went wrong, please try again!");
-//     };
-//   };
+ const showError = (response) => {
+    if (!response.ok) {
+     return ("Something went wrong, please try again!");
+    };
+  };
   
   
     return (
@@ -51,19 +52,19 @@ const App = () => {
         <nav>
           <NavLink to={'/'} style={{ textDecoration: 'none' }}>
             <div className="text-container">
-              <span>c</span>
+              <span>C</span>
               <span>i</span>
               <span>n</span>
               <span>e</span>
               <span>m</span>
               <span>a</span>
               <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span>l</span>
+              <span>L</span>
               <span>i</span>
               <span>g</span>
               <span>h</span>
               <span>t</span>
-              <span>h</span>
+              <span>H</span>
               <span>o</span>
               <span>u</span>
               <span>s</span>
@@ -71,19 +72,19 @@ const App = () => {
             </div>  
           </NavLink>
         </nav>
+          {errorMessage ? <h2>{errorMessage}</h2> :
         <main>
-          {/* {errorMessage && <h2>{errorMessage}</h2>} */}
           <Route
             exact path="/" render={() => <MoviesContainer movies={movies} updateSelectedMovieId={updateSelectedMovieId} selectedMovieId={selectedMovieId} trailer={trailer}/>}
           />
           <Route
             exact path='/:id' render={({ match }) => {
               console.log('match.params from app when passed to infro page', match.params.id);
-              return <InfoPage selectedMovieId={parseInt(match.params.id)}/>
-              // return <InfoPage selectedMovieId={match.params.id} showError={showError}/>
+              return <InfoPage selectedMovieId={parseInt(match.params.id)} showError={showError}/>
             }}
           /> 
         </main>
+}
       </>
     );
   };

@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import MoviesContainer from './MoviesContainer';
 import InfoPage from './InfoPage';
 import { getMovies, getSelectedTrailer } from './apiCalls';
 import { NavLink, Route } from 'react-router-dom';
+
+
+const App = () => {
+
+  const [movies, setMovies] = useState([])
+  const [selectedMovieId, setSelected]
+
+}
 
 class App extends Component {
   constructor() {
@@ -50,23 +58,23 @@ class App extends Component {
         <nav>
           <NavLink to={'/'} style={{ textDecoration: 'none' }}>
             <div className="text-container">
-              <span>r</span>
-              <span>a</span>
-              <span>n</span>
               <span>c</span>
               <span>i</span>
-              <span>d</span>
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span>t</span>
-              <span>o</span>
+              <span>n</span>
+              <span>e</span>
               <span>m</span>
               <span>a</span>
-              <span>t</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span>l</span>
               <span>i</span>
-              <span>l</span>
-              <span>l</span>
+              <span>g</span>
+              <span>h</span>
+              <span>t</span>
+              <span>h</span>
               <span>o</span>
+              <span>u</span>
               <span>s</span>
+              <span>e</span>
             </div>  
           </NavLink>
         </nav>

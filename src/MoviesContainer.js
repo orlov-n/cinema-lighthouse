@@ -3,11 +3,11 @@ import './MoviesContainer.css';
 import MovieCard from './MovieCard';
 import { Link } from 'react-router-dom';
 
-const MoviesContainer = ({ movieData, updateSelectedMovieId, trailer, selectedMovieId }) => {
+const MoviesContainer = ({ movies, updateSelectedMovieId, trailer, selectedMovieId }) => {
     if (!trailer) {
         trailer = {key: ''};
     };
-    const movieCards = movieData.map(movie => {
+    const movieCards = movies.map(movie => {
         let trailerUrl =`https://www.youtube.com/embed/`;
         movie.id === selectedMovieId ? trailerUrl += trailer.key + `?mute=1&autoplay=1` : trailerUrl = '';
         return (

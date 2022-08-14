@@ -9,50 +9,43 @@ import { NavLink, Route } from 'react-router-dom';
 const App = () => {
 
   const [movies, setMovies] = useState([])
-  const [selectedMovieId, setSelected]
+  const [selectedMovieId, setSelectedMovieId] = useState(null)
+  // const [errorMessage, setErrorMessage] = useState('')
+  const [trailer, setTrailer] = useState([])
 
-}
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      selectedMovieId: null,
-      errorMessage: '',
-      trailer: []
-    };
-  };
-
-  componentDidMount = () => {
+  useEffect(() => {
     getMovies()
     .then(data => {
       const filteredMovies = data.movies.filter(movie => movie.backdrop_path !== "https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg" && movie.backdrop_path !== '');
-      this.setState({movies: filteredMovies})
+      setMovies(filteredMovies)
     })
-    .catch(error => {
-      console.log(error);
-      this.setState({errorMessage: `${this.showError(error)} ${error.message}`})
-    })
-  };
+    // .catch(error => {
+    //   console.log(error);
+    //   setErrorMessage(`${showError(error)} ${error.message}`)
+    // })
 
-  updateSelectedMovieId = (id) => {
+  }, [])
+
+
+
+  const updateSelectedMovieId = (id) => {
+    setSelectedMovieId(id)
     getSelectedTrailer(id) 
     .then(data => {
-      this.setState({
-        trailer: data.videos[0],
-        selectedMovieId: id
-      })
+     setTrailer(
+     data.videos[0]
+        // selectedMovieId: id
+ )
     })
   };
 
-  showError = (response) => {
-    if (!response.ok) {
-     return ("Something went wrong, please try again!");
-    };
-  };
+//  const showError = (response) => {
+//     if (!response.ok) {
+//      return ("Something went wrong, please try again!");
+//     };
+//   };
   
-  render() {
+  
     return (
       <>
         <nav>
@@ -79,19 +72,20 @@ class App extends Component {
           </NavLink>
         </nav>
         <main>
-          {this.state.errorMessage && <h2>{this.state.errorMessage}</h2>}
+          {/* {errorMessage && <h2>{errorMessage}</h2>} */}
           <Route
-            exact path="/" render={() => <MoviesContainer movieData={this.state.movies} updateSelectedMovieId={this.updateSelectedMovieId} selectedMovieId={this.state.selectedMovieId} trailer={this.state.trailer}/>}
+            exact path="/" render={() => <MoviesContainer movies={movies} updateSelectedMovieId={updateSelectedMovieId} selectedMovieId={selectedMovieId} trailer={trailer}/>}
           />
           <Route
             exact path='/:id' render={({ match }) => {
-              return <InfoPage selectedMovieId={match.params.id} showError={this.showError}/>
+              return <InfoPage selectedMovieId={match.params.id}/>
+              // return <InfoPage selectedMovieId={match.params.id} showError={showError}/>
             }}
           /> 
         </main>
       </>
     );
   };
-};
+
 
 export default App;

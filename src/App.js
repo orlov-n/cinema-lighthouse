@@ -24,7 +24,7 @@ const App = () => {
     //   setErrorMessage(`${showError(error)} ${error.message}`)
     // })
 
-  }, [])
+  }, [selectedMovieId])
 
 
 
@@ -78,7 +78,8 @@ const App = () => {
           />
           <Route
             exact path='/:id' render={({ match }) => {
-              return <InfoPage selectedMovieId={match.params.id}/>
+              console.log('match.params from app when passed to infro page', match.params.id);
+              return <InfoPage selectedMovieId={parseInt(match.params.id)}/>
               // return <InfoPage selectedMovieId={match.params.id} showError={showError}/>
             }}
           /> 

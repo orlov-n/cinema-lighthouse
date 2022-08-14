@@ -3,15 +3,16 @@ import './InfoPage.css';
 import { getSelectedMovie } from './apiCalls';
 
 
-const InfoPage = (selectedMovieId, showError) => {
+const InfoPage = ({selectedMovieId, showError}) => {
 
   const [selectedMovie, setSelectedMovie] = useState({})
   // const [errorMessage, setErrorMessage] = useState('')
   const [genres, setGenres] = useState([])
-
+console.log('selected movie from infopage at the top', selectedMovieId)
 useEffect(() => {
   getSelectedMovie(selectedMovieId)
     .then(data => {
+      console.log('data from infoPage', data)
       let genres = data.movie.genres.join(' | ');
       setGenres(genres)
       setSelectedMovie(data.movie)

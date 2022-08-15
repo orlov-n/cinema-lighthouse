@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     padding: 1vw;
     padding-top: 1vh;
+    min-width: 20rem;
 } 
 
 .movies-container::after {

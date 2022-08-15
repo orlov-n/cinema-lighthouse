@@ -34,13 +34,13 @@
   /* background-color: transparent;
   width: 26vw; */
   /* height: 86vh; */
-  /* height: 88%; */
+  width: 26vw;
+  /* height: 100%; */
   background-color: transparent;
-  /* min-width: 21rem; */
+   min-width: 21rem;
   /* max-height:72rem; */
-  /* margin-bottom: 3em; */
+  
   /* max-width: 86vw;  */
-  width: 70%;
   min-width: 20rem;
   min-height: 32rem;
  /* max-height: 66vh; */
@@ -58,12 +58,9 @@
   transition: transform 1.3s;
   transform-style: preserve-3d; */
   /* position: relative; */
-  /* min-width: 20rem;
-  min-height: 32rem; */
+  min-width: 20rem;
+  min-height: 32rem;
  /* max-height: 66vh; */
- width: 70%;
- min-width: 20rem;
- min-height: 32rem;
   text-align: center;
   transition: transform 1.3s;
   transform-style: preserve-3d;
@@ -82,7 +79,6 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; */
   position: absolute;
-  width: 70%;
   min-width: 20rem;
   min-height: 32rem;
  /* max-height: 66vh; */
@@ -98,7 +94,6 @@
   box-shadow: rgb(0, 0, 0) 6px 2px 30px 11px; */
   background-color: #000000;
   color: black;
-  width: 70%;
   min-width: 20rem;
   min-height: 32rem;
  /* max-height: 66vh; */
@@ -108,14 +103,13 @@
 .rotating-image {
   /* height: 100%;
   width: 26vw; */
-  width: 70%;
   min-width: 20rem;
   min-height: 32rem;
  /* max-height: 66vh; */
   /* width: auto; */
   /* max-width: 27rem; */
   /* max-height:612vh; */
-  /* width: 100%; */
+  width: 100%;
   /* max-height: 77vh; */
   /* height:32rem; */
 }

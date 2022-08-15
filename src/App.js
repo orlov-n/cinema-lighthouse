@@ -53,7 +53,7 @@ const App = () => {
   
   
     return (
-      <>
+      <body>
         <nav>
           <NavLink to={'/'} style={{ textDecoration: 'none' }}>
             <div className="text-container">
@@ -90,7 +90,7 @@ const App = () => {
           /> 
         </main>
 }
-      </>
+      </body>
     );
   };
 

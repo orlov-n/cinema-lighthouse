@@ -4,6 +4,7 @@ import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import InfoPage from '../InfoPage/InfoPage';
 import { getMovies, getSelectedTrailer } from '../apiCalls';
 import { NavLink, Route } from 'react-router-dom';
+import { Navbar } from '../Navbar/Navbar';
 
 
 const App = () => {
@@ -53,32 +54,10 @@ const App = () => {
   
   
     return (
-      <body>
-        <nav>
-          <NavLink to={'/'} style={{ textDecoration: 'none' }}>
-            <div className="text-container">
-              <span>C</span>
-              <span>i</span>
-              <span>n</span>
-              <span>e</span>
-              <span>m</span>
-              <span>a</span>
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span>L</span>
-              <span>i</span>
-              <span>g</span>
-              <span>h</span>
-              <span>t</span>
-              <span>H</span>
-              <span>o</span>
-              <span>u</span>
-              <span>s</span>
-              <span>e</span>
-            </div>  
-          </NavLink>
-        </nav>
+      <>
           {errorMessage ? <h2>{errorMessage}</h2> :
         <main>
+          <Navbar />
           <Route
             exact path="/" render={() => <MoviesContainer movies={movies} updateSelectedMovieId={updateSelectedMovieId} selectedMovieId={selectedMovieId} trailer={trailer}/>}
           />
@@ -89,8 +68,8 @@ const App = () => {
             }}
           /> 
         </main>
-}
-      </body>
+        }
+      </>
     );
   };
 

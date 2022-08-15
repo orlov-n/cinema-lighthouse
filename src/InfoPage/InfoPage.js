@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import './InfoPage.css';
-import { getSelectedMovie } from './apiCalls';
+import { getSelectedMovie } from '../apiCalls';
 
 
 const InfoPage = ({selectedMovieId, showError}) => {

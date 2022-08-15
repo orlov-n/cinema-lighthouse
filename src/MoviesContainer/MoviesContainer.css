@@ -3,8 +3,8 @@
     justify-content: space-evenly;
     height: 100%;
     flex-wrap: wrap;
-    padding: 1vw;
-    padding-top: 1vh;
+    /* padding: 5em; */
+    /* padding-top: 1vh; */
     min-width: 20rem;
 } 
 

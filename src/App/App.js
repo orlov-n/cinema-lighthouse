@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import MoviesContainer from './MoviesContainer';
-import InfoPage from './InfoPage';
-import { getMovies, getSelectedTrailer } from './apiCalls';
+import MoviesContainer from '../MoviesContainer';
+import InfoPage from '../InfoPage';
+import { getMovies, getSelectedTrailer } from '../apiCalls';
 import { NavLink, Route } from 'react-router-dom';
 
 

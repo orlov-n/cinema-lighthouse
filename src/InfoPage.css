@@ -9,7 +9,12 @@
   background-position: center;
   overflow: hidden;
   background-size: cover;
-  height: 88vh;
+  background-repeat:no-repeat;
+  /* height: 100vh; */
+  height: 100%;
+  overflow: hidden;
+  
+
 }
 
 .info-mask {
@@ -26,15 +31,15 @@
 
 .rotating-box {
   background-color: transparent;
-  width: 26vw;
-  height: 88vh;
-  perspective: 1000px; 
+  width: 22rem;
+  height: 33rem;
+  /* perspective: 990rem;  */
 }
 
 .rotating-box-inner {
   position: relative;
-  width: 26vw;
-  height: 100%;
+  width: 22rem;
+  height: 33rem;
   text-align: center;
   transition: transform 1.3s;
   transform-style: preserve-3d;
@@ -47,9 +52,9 @@
 .rotating-box-front,
 .rotating-box-back {
   position: absolute;
-  width: 26vw;
-  height: 90%;
-  margin-top: 3vh;
+  width: 22rem;
+  height: 33rem;
+  margin-top: 2em;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -57,24 +62,25 @@
 .rotating-box-front {
   background-color: #000000;
   color: black;
-  width: 26vw;
-  box-shadow: rgb(0, 0, 0) 6px 2px 30px 11px;
+  width: 22rem;
+  height: 33rem;
+  box-shadow: rgb(0, 0, 0) .4rem .2rem 2rem .8rem;
 }
 
 .rotating-image {
-  height: 100%;
-  width: 26vw;
+  height: 33rem;
+  width: 22rem;
 }
 
 .rotating-box-back {
   background-color: #000000;
   color: white;
   transform: rotateY(180deg);
-  width: 26vw;
+  width: 22rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 3px;
+  padding: .3em;
   background: linear-gradient(to right, rgb(155, 119, 21), rgb(86, 75, 35));
 }
 
@@ -111,20 +117,20 @@
 }
 
 .rotating-box-back:after {
-  filter: blur(50px);
+  filter: blur(3rem);
 }
 
 .title {
   font-family: 'David Libre';
-  font-size: 4vh;
-  letter-spacing: 8px;
+  font-size: 2rem;
+  letter-spacing: .5rem;
   color: #fff;
   text-align: center;
   font-variant: small-caps;
   font-style: italic;
-  margin: 2vh;
-  margin-bottom: 3vh;
-  margin-top: 3vh;
+  margin: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2em;
 }
 
 .tagline-wrapper {
@@ -137,19 +143,19 @@
 }
 
 .tagline {
-  margin-bottom: 3vh;
+  margin-bottom: 2em;
   margin: 0;
   font-family: Marker Felt;
-  text-decoration: underline;
-  font-size: 1em;
+  /* text-decoration: underline; */
+  font-size: 1rem;
 }
 
 .information-wrapper {
-  margin-top: 3vh;
+  margin-top: 1em;
 }
 
 .information {
-  font-size: 0.85em;
+  font-size: 0.85rem;
 }
 
 .overview-wrapper {
@@ -157,12 +163,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 1vh;
+  margin: 1em;
 }
 
 .overview {
-  padding: .3vw;
+  padding: 1em;
   font-family: 'Pragati Narrow', sans-serif;
-  font-size: 0.94em;
+  font-size: 1rem;
 }
 

@@ -1,32 +1,67 @@
+* {
+  border: rgb(131, 131, 182) solid 1px
+}
+/* body {
+  width: 100%;
+} */
+
 main {
   background-color: rgb(189, 184, 176);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   height: 100%;
+  /* position: relative; */
+  overflow-y: hidden;
+  width: 100%; 
+  /* height: 100vh; */
 }
 
 nav {
   display: flex;
   justify-content: center;
   background-color: #000000;
-  height: 10vh;
+  min-height: 10vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; 
-  font-size: 5rem; 
+  /* font-size: 7vw;  */
   overflow: hidden;
   transition: height 0.66s ease-out;
   background: linear-gradient(to top, rgb(189, 184, 176), #000000 111%, rgb(149, 146, 146) 55%, #3d3b3b 190%, rgb(189, 184, 176) 25%);
-  padding-top: 1vh;
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  /* padding-bottom: 3vh; */
+  width: 100%;
+  /* max-width: 100vh; */
 }
 
 .text-container {
-  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  font-size: min(50rem, 30px);
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  /* flex-direction: row; */
+
+  /* max-width: 5rem; */
+  /* font-size: min 15vw; */
+  /* font-size: 5em; */
+  /* margin-top: 21em; */
+  /* min-width: 10rem; */
+  /* font-size: inherit; */
+  /* font-size: 100%; */
+  width: 100%;
+  height: 100%;
+}
+
+.text-container {
+  
 }
 
 .text-container > span {
   /* text-transform: uppercase; */
-  animation: glow 9s ease-in-out infinite;
+  animation: glow 9s ease-in-out 1200000;
   margin-top: 0;
+  /* height: 100%; */
+  /* font-size: 100%; */
+  /* height: 2rem; */
 }
 
 @keyframes glow {
@@ -107,4 +142,6 @@ nav {
 
 .active {
   color: rgba(197, 187, 187, 0.916);
+  width: 100%;
+  height: 100%;
 }

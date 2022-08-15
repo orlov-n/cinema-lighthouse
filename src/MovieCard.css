@@ -1,13 +1,15 @@
 .card {
     cursor: pointer;
     color: white;
-    height: 36vh;
-    margin-top: 5vh;
+    height: 20rem;
+    margin-top: .8rem;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .card-container .card .half {
-    width: 340px;
-    height: 200px;
+    width: 21rem;
+    height: 12rem;
     transition: 1.6s;
 }
 
@@ -18,8 +20,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transform: translateY(100px);
-    height: 153px;
+    transform: translateY(6.5rem);
+    height: 9rem;
 }
 
 .card-container .card:hover .half.top {
@@ -27,25 +29,25 @@
 }
 
 .card-container .card .half.top .content img {
-    width: 340px;
-    height: 200px;
-    box-shadow: 10px 16px 58px -13px rgba(0, 0, 0, 1);
+    width: 21rem;
+    height: 13.5rem;
+    box-shadow: .7rem 1rem 4rem -1rem rgba(0, 0, 0, 1);
 }
 
 img {
-    min-width: 340px;
-    min-height: 210px;
+    min-width: 21rem;
+    min-height: 14rem;
 }
 
 p {
-    margin-left: .6vh;
+    margin-left: .4rem;
     margin-top: 0;
 } 
 
 .card-container .card .half.bottom {
     background: rgb(19, 17, 17);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-    transform: translateY(-100px);
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.75);
+    transform: translateY(-6rem);
 }
 
 .card-container .card:hover .half.bottom {
@@ -53,14 +55,14 @@ p {
 }
 
 .half.top {
-    height: 333px;
+    height: 20rem;
 }
 
-.half.bottom {
-    height: 303px;
-}
+/* .half.bottom {
+    height: 18rem;
+} */
 
 .trailer {
-    width: 340px;
-    height: 200px;
+    width: 21rem;
+    height:13.5rem;
 }

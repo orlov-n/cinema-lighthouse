@@ -9,7 +9,9 @@
   background-position: center;
   overflow: hidden;
   background-size: cover;
-  height: 88vh;
+  height: 100%;
+  overflow-x: hidden;
+  /* height: 88vh; */
 }
 
 .info-mask {
@@ -28,7 +30,9 @@
   background-color: transparent;
   width: 26vw;
   height: 88vh;
-  perspective: 1000px; 
+  /* width: 100%; */
+
+  /* perspective: 50rem;  */
 }
 
 .rotating-box-inner {

@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     /* padding: 5em; */
     /* padding-top: 1vh; */
-    min-width: 20rem;
+    min-width: 300px;
 } 
 
 .movies-container::after {

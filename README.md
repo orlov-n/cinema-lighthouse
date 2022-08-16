@@ -1,7 +1,7 @@
 # Cinema LightHouse
 
 ## Overview
-**Cinema Lighthouse** is an easy-to-use, visually appealing application that allows for a user to view information about some popular (and not-so-popular) movies. Information includes release date, average ratings, overview, and more.
+**Cinema Lighthouse** is an easy-to-use, visually appealing application that allows the user to browse and view information about some popular (and not-so-popular) movies. Information includes release date, average ratings, overview, and more.
 
 #### Goals
 - Gain competency with React hooks

@@ -9,15 +9,18 @@ nav {
   overflow: hidden;
   transition: height 0.66s ease-out;
   background: linear-gradient(to top, rgb(189, 184, 176), #000000 111%, rgb(149, 146, 146) 55%, #3d3b3b 190%, rgb(189, 184, 176) 25%);
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   /* padding-bottom: 3vh; */
+  width: 100%;
 }
 
 .text-container {
   display: flex;
-  width: 100vw;
+  width: 100%;
+  /* width: 100vw; */
   justify-content: center;
   font-size: min(8vw, 5rem)
+  
   /* flex-wrap: wrap; */
   /* align-items: center; */
   /* flex-direction: row; */

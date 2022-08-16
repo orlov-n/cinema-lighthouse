@@ -1,15 +1,19 @@
 .movies-container {
-    display: flex;
-    justify-content: space-evenly;
-    height: 100%;
-    flex-wrap: wrap;
-    /* padding: 5em; */
+    display: grid;
+    /* grid-gap: .3em; */
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    /* padding: 0em 2em 0em 2em; */
     /* padding-top: 1vh; */
     min-width: 300px;
+  /* padding: 6% 2% 2% 5%; */
+  background-color: rgb(189, 184, 176);
+    /* width: 100%; */
+    /* width: 100vh; */
+
 } 
 
-.movies-container::after {
+/* .movies-container::after {
     content: "";
     flex: unset;
-    margin-left: 17.5vw;
-}
+    margin-left: 18.5vw;
+} */

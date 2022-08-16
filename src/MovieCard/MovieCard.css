@@ -1,10 +1,14 @@
 .card {
     cursor: pointer;
     color: white;
-    height: 20rem;
-    margin-top: .8rem;
+    /* height: 20rem; */
+    /* margin-top: .8rem; */
+    /* margin-bottom: .8rem; */
     /* margin-left: 1em; */
-    /* margin-right: 1em; */
+    margin-right: 1em;
+    padding-left: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .card-container .card .half {
@@ -37,11 +41,14 @@
 img {
     min-width: 21rem;
     min-height: 14rem;
+    /* margin-bottom: 2em; */
 }
 
 p {
     margin-left: .4rem;
     margin-top: 0;
+    margin-bottom: 0;
+    height: 2em;
 } 
 
 .card-container .card .half.bottom {

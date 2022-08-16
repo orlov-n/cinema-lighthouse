@@ -8,11 +8,8 @@
 - Implement Cypress to conduct acceptance testing on React components & asynchronous JS
 - Create a multi-page UX using Router
 
-#### Project Specs
-The rubric and specs can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
-
 ## Deployed Link
-[Click Here]()
+[Click Here](https://cinema-lighthouse.herokuapp.com/)
 
 ## Visual Walkthrough
 - User can view a list of movies on the home page

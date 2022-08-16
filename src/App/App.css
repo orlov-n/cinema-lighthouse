@@ -4,10 +4,10 @@
 
 main {
   background-color: rgb(189, 184, 176);
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* height: 100%; */
-  /* width: 100vw; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
   min-width: 300px;
-  height: 100vh;
+  height: 110vh;
 }

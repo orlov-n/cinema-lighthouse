@@ -1,10 +1,6 @@
 .card {
     cursor: pointer;
     color: white;
-    /* height: 20rem; */
-    /* margin-top: .8rem; */
-    /* margin-bottom: .8rem; */
-    /* margin-left: 1em; */
     margin-right: 1em;
     padding-left: 1em;
     padding-top: 0;
@@ -41,7 +37,6 @@
 img {
     min-width: 21rem;
     min-height: 14rem;
-    /* margin-bottom: 2em; */
 }
 
 p {
@@ -49,7 +44,7 @@ p {
     margin-top: 0;
     margin-bottom: 0;
     height: 2em;
-} 
+}
 
 .card-container .card .half.bottom {
     background: rgb(19, 17, 17);
@@ -65,11 +60,7 @@ p {
     height: 20rem;
 }
 
-/* .half.bottom {
-    height: 18rem;
-} */
-
 .trailer {
     width: 21rem;
-    height:13.5rem;
+    height: 13.5rem;
 }

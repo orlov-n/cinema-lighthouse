@@ -1,5 +1,5 @@
 {
-  "name": "tomatillos-rancid",
+  "name": "cinema-lighthouse",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.3.0"
+    "cypress": "^10.3.0",
+    "surge": "^0.23.1"
   }
 }

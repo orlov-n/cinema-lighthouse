@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./InfoPage.css";
 import { getSelectedMovie } from "../apiCalls";
 import { Navbar } from "../Navbar/Navbar";

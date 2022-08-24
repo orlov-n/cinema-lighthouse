@@ -25,7 +25,9 @@ const App = () => {
       })
       .catch((error) => {
         console.log(error);
-        setErrorMessage(`${showError(error)}`);
+        setErrorMessage(error);
+        showError(error)
+
       });
     // getTrailer(selectedMovieId)
     // getTrailer(selectedMovieId)

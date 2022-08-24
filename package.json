@@ -1,6 +1,5 @@
 {
   "name": "cinema-lighthouse",
-  "homepage": "https://orlov-n.github.io/cinema-lighthouse/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

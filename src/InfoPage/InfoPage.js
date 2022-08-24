@@ -16,14 +16,14 @@ const InfoPage = ({ selectedMovieId, showError }) => {
           let genres = data.movie.genres.join(" | ");
           setGenres(genres);
           setSelectedMovie(data.movie);
-        },
-        [errorMessage]
+        }
       )
       .catch((error) => {
         console.log(error);
-        setErrorMessage(`${showError(error)}`);
+        showError(error)
+        setErrorMessage(error);
       });
-  }, []);
+  }, [errorMessage, selectedMovieId]);
 
   return (
     <>

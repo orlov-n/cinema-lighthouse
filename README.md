@@ -9,7 +9,7 @@
 - Create a multi-page UX using Router
 
 ## Deployed Link
-[Click Here](https://cinema-lighthouse.herokuapp.com/)
+[Click Here](https://github.com/orlov-n/cinema-lighthouse)
 
 ## Visual Walkthrough
 - User can view a list of movies on the home page

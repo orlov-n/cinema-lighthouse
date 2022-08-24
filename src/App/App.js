@@ -25,8 +25,7 @@ const App = () => {
       })
       .catch((error) => {
         console.log(error);
-        setErrorMessage(error);
-        showError(error)
+        setErrorMessage(error.message);
 
       });
     // getTrailer(selectedMovieId)
@@ -47,16 +46,10 @@ const App = () => {
     });
   };
 
-  const showError = (response) => {
-    if (!response.ok) {
-      return "Something went wrong, please try again!";
-    }
-  };
-
   return (
     <>
       {errorMessage ? (
-        <h2>{errorMessage}</h2>
+        <h2>You done broke our site! Please give it a few seconds.</h2>
       ) : (
         <main>
           <Navbar />
@@ -83,7 +76,6 @@ const App = () => {
               return (
                 <InfoPage
                   selectedMovieId={parseInt(match.params.id)}
-                  showError={showError}
                 />
               );
             }}

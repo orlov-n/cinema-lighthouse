@@ -7,7 +7,7 @@ const InfoPage = ({ selectedMovieId, showError }) => {
   const [selectedMovie, setSelectedMovie] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [genres, setGenres] = useState([]);
-  console.log("selected movie from infopage at the top", selectedMovieId);
+  
   useEffect(() => {
     getSelectedMovie(selectedMovieId)
       .then(
@@ -20,15 +20,14 @@ const InfoPage = ({ selectedMovieId, showError }) => {
       )
       .catch((error) => {
         console.log(error);
-        showError(error)
-        setErrorMessage(error);
+        setErrorMessage(error.message);
       });
   }, [errorMessage, selectedMovieId]);
 
   return (
     <>
       {errorMessage ? (
-        <h2>{errorMessage}</h2>
+        <h2>You done broke our site! Please give it a few seconds.</h2>
       ) : (
         <article
           className="movie-info-container"

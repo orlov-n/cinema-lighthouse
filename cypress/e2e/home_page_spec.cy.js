@@ -11,8 +11,8 @@ describe('Visit home page', () => {
     expect(true).to.equal(true);
   });
 
-  it('Should display a header of RANCID TOMATILLOS', () => {
-      cy.get('.text-container').contains('rancid tomatillos');
+  it('Should display a header of Cinema Lighthouse', () => {
+      cy.get('.text-container').contains('cinema lighthouse');
   });
 
   it('Should display all movie cards', () => {

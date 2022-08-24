@@ -3,7 +3,7 @@ import "./App.css";
 import MoviesContainer from "../MoviesContainer/MoviesContainer";
 import InfoPage from "../InfoPage/InfoPage";
 import { getMovies, getSelectedTrailer } from "../apiCalls";
-import { NavLink, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Navbar } from "../Navbar/Navbar";
 
 const App = () => {

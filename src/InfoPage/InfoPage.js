@@ -7,17 +7,16 @@ const InfoPage = ({ selectedMovieId, showError }) => {
   const [selectedMovie, setSelectedMovie] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [genres, setGenres] = useState([]);
-  
+
   useEffect(() => {
+    console.log("selected movie id info page on reload", selectedMovieId);
     getSelectedMovie(selectedMovieId)
-      .then(
-        (data) => {
-          console.log("data from infoPage", data);
-          let genres = data.movie.genres.join(" | ");
-          setGenres(genres);
-          setSelectedMovie(data.movie);
-        }
-      )
+      .then((data) => {
+        console.log("data from infoPage", data);
+        let genres = data.movie.genres.join(" | ");
+        setGenres(genres);
+        setSelectedMovie(data.movie);
+      })
       .catch((error) => {
         console.log(error);
         setErrorMessage(error.message);
@@ -28,9 +27,9 @@ const InfoPage = ({ selectedMovieId, showError }) => {
     <>
       {errorMessage ? (
         <h2>You broke our site! Please give it a few seconds...</h2>
-      ) : Object.keys(selectedMovie).length !== 0
-      &&
-      (
+      ) : Object.keys(selectedMovie).length === 0 ? (
+        <p>Loading...</p>
+      ) : (
         <article
           className="movie-info-container"
           style={{ backgroundImage: `url(${selectedMovie.backdrop_path})` }}

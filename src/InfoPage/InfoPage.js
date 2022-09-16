@@ -9,7 +9,7 @@ const InfoPage = ({ selectedMovieId, showError, updateSelectedMovieId }) => {
   const [genres, setGenres] = useState([]);
   
   useEffect(() => {
-    updateSelectedMovieId(selectedMovieId)
+    passId()
     getSelectedMovie(selectedMovieId)
       .then(
         (data) => {
@@ -24,6 +24,10 @@ const InfoPage = ({ selectedMovieId, showError, updateSelectedMovieId }) => {
         setErrorMessage(error.message);
       });
   }, [errorMessage, selectedMovieId]);
+
+  const passId =() => {
+    updateSelectedMovieId(selectedMovieId)
+  }
 
   return (
     <>

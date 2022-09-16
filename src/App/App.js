@@ -49,7 +49,7 @@ const App = () => {
   return (
     <>
       {errorMessage ? (
-        <h2>You done broke our site! Please give it a few seconds.</h2>
+        <h2>You broke our site! Please give it a few seconds...</h2>
       ) : (
         <main>
           <Navbar />
@@ -66,13 +66,10 @@ const App = () => {
             )}
           />
           <Route
-            exact
+            
             path="/:id"
             render={({ match }) => {
-              console.log(
-                "match.params from app when passed to infro page",
-                match.params.id
-              );
+    
               return (
                 <InfoPage
                   selectedMovieId={parseInt(match.params.id)} updateSelectedMovieId={updateSelectedMovieId}

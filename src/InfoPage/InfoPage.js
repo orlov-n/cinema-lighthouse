@@ -3,7 +3,7 @@ import "./InfoPage.css";
 import { getSelectedMovie } from "../apiCalls";
 import { Navbar } from "../Navbar/Navbar";
 
-const InfoPage = ({ selectedMovieId, showError }) => {
+const InfoPage = ({ selectedMovieId, showError, updateSelectedMovieId }) => {
   const [selectedMovie, setSelectedMovie] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [genres, setGenres] = useState([]);
@@ -22,6 +22,7 @@ const InfoPage = ({ selectedMovieId, showError }) => {
         console.log(error);
         setErrorMessage(error.message);
       });
+      updateSelectedMovieId(selectedMovieId)
   }, [errorMessage, selectedMovieId]);
 
   return (

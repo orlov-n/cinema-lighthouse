@@ -75,7 +75,7 @@ const App = () => {
               );
               return (
                 <InfoPage
-                  selectedMovieId={parseInt(match.params.id)}
+                  selectedMovieId={parseInt(match.params.id)} updateSelectedMovieId={updateSelectedMovieId}
                 />
               );
             }}

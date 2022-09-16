@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cinema-lighthouse/static/css/main.8fc55c8e.css",
-    "main.js": "/cinema-lighthouse/static/js/main.dd8d2fae.js",
+    "main.css": "/cinema-lighthouse/static/css/main.75d67b77.css",
+    "main.js": "/cinema-lighthouse/static/js/main.d43cfed7.js",
     "static/js/787.dc543e68.chunk.js": "/cinema-lighthouse/static/js/787.dc543e68.chunk.js",
     "index.html": "/cinema-lighthouse/index.html",
-    "main.8fc55c8e.css.map": "/cinema-lighthouse/static/css/main.8fc55c8e.css.map",
-    "main.dd8d2fae.js.map": "/cinema-lighthouse/static/js/main.dd8d2fae.js.map",
+    "main.75d67b77.css.map": "/cinema-lighthouse/static/css/main.75d67b77.css.map",
+    "main.d43cfed7.js.map": "/cinema-lighthouse/static/js/main.d43cfed7.js.map",
     "787.dc543e68.chunk.js.map": "/cinema-lighthouse/static/js/787.dc543e68.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fc55c8e.css",
-    "static/js/main.dd8d2fae.js"
+    "static/css/main.75d67b77.css",
+    "static/js/main.d43cfed7.js"
   ]
 }

@@ -27,8 +27,10 @@ const InfoPage = ({ selectedMovieId, showError }) => {
   return (
     <>
       {errorMessage ? (
-        <h2>You done broke our site! Please give it a few seconds.</h2>
-      ) : (
+        <h2>You broke our site! Please give it a few seconds...</h2>
+      ) : Object.keys(selectedMovie).length !== 0
+      &&
+      (
         <article
           className="movie-info-container"
           style={{ backgroundImage: `url(${selectedMovie.backdrop_path})` }}

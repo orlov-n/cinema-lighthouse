@@ -11,6 +11,7 @@
   background-size: cover;
   width: 100%;
   height: 105vh;
+  /* height: 105vh; */
   background-color: rgb(189, 184, 176);
 
 }
@@ -34,7 +35,7 @@
   max-width: 500rem;
   width: 31vw;
   object-fit: contain;
-  height: 100%;
+  height: 73vh;
 }
 
 .rotating-box-inner {
@@ -45,16 +46,18 @@
   min-width: 21.5rem;
   max-width: 500rem;
   width: 31vw;
+  height: 73vh;
   object-fit: contain;
 
 }
 
 .rotating-box:hover .rotating-box-inner {
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
   min-width: 21.5rem;
   max-width: 500rem;
   width: 31vw;
   object-fit: contain;
+  height: 73vh;
 
 }
 
@@ -62,12 +65,14 @@
 .rotating-box-back {
   position: absolute;
   margin-top: 2em;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
+  /* backface-visibility: hidden; */
   min-width: 21.5rem;
   max-width: 500rem;
   width: 31vw;
-  object-fit: contain;
+  /* object-fit: contain; */
+  /* height: ; */
+  /* height: 55vh; */
 }
 
 .rotating-box-front {
@@ -77,6 +82,8 @@
   max-width: 500rem;
   width: 31vw;
   object-fit: contain;
+  /* height: 100%; */
+
   box-shadow: rgb(0, 0, 0) 0rem 0rem .10rem .42331rem;
 }
 
@@ -85,6 +92,8 @@
   max-width: 500rem;
   width: 31vw;
   object-fit: contain;
+  /* height: 100%; */
+
 
 }
 
@@ -107,7 +116,9 @@
 .info-container {
   min-width: 21.5rem;
   max-width: 500rem;
-  width: 31vw;
+  width: 30vw;
+  height: 73vh;
+
   object-fit: contain;
   background: linear-gradient(to top, rgb(30, 29, 29), rgb(17, 17, 14));
 }
@@ -136,7 +147,7 @@
   background: linear-gradient(45deg, #eeebe4, #e0e0f1, #deeede, #f4ed8a, #f3ce6a, #f3e3d0,
       #f4e8e8, #f3f4ec, #f4f4e9, #f3df8e);
   background-size: 400%;
-  width: calc(100% + 1px);
+  width: calc(98% + 1px);
   height: calc(100% + 1px);
   z-index: -1;
   animation: steam 26s linear infinite;

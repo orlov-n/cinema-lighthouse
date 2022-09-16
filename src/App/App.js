@@ -66,7 +66,6 @@ const App = () => {
             )}
           />
           <Route
-            
             path="/:id"
             render={({ match }) => {
     
